@@ -39,14 +39,14 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
                     dt1.Columns.Remove("Дата внедрения");
                 if (dt2.Columns["Дата внедрения"] != null)
                     dt2.Columns.Remove("Дата внедрения");
-                reoGridControl1.Load("..\\..\\ActivitiesPlanHelpers\\ReportForms\\Report1.xlsx");
+                reoGridControl1.Load(Directory.GetCurrentDirectory() + "\\ActivitiesPlanHelpers\\ReportForms\\Report1.xlsx");
                 //reoGridControl1.Load("..\\..\\Reports\\1.xlsx");
                 start = 7;
                 w = 5;
             }
             if (type == 2)
             {
-                reoGridControl1.Load("..\\..\\ActivitiesPlanHelpers\\ReportForms\\Report2.xlsx");
+                reoGridControl1.Load(Directory.GetCurrentDirectory() + "\\ActivitiesPlanHelpers\\ReportForms\\Report2_1.xlsx");
                 //reoGridControl1.Load("..\\..\\Reports\\1.xlsx");
                 start = 8;
                 w = 4;
@@ -165,6 +165,7 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
             //workbook.Worksheets[1] = worksheet;
             workbook.Worksheets[0].Name = "Приложение1";
             workbook.Save(Directory.GetCurrentDirectory() + "\\Reports" + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx", unvell.ReoGrid.IO.FileFormat.Excel2007);
+            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Reports" + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
 
 
             //SaveFileDialog SFD = new SaveFileDialog()

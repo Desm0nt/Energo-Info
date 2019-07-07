@@ -500,6 +500,636 @@ namespace WindowsFormsApp1
             comboBox2.DisplayMember = "value";
             comboBox2.ValueMember = "index";
             DropDownList13_SelectedIndexChanged(this, EventArgs.Empty);
+            #region Gridview1
+            var dt = db4e.GetSqlDataSource2(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView1.DataSource = dt.DefaultView;
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                dataGridView1.Columns[i].Visible = false;
+            dataGridView1.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView1.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView1.Columns["КодОснНапр"].Visible = true;
+            dataGridView1.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView1.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView1.Columns["НомерСтроки"].Visible = true;
+            dataGridView1.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView1.Columns["Наименование"].ReadOnly = true;
+            dataGridView1.Columns["Наименование"].Visible = true;
+            dataGridView1.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView1.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView1.Columns["Date_vndr"].Visible = true;
+            dataGridView1.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView1.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView1.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView1.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView1.Columns["VTpl"].Visible = true;
+            dataGridView1.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView1.Columns["EkUslTpl"].Visible = true;
+            dataGridView1.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView1.Columns["EkRub"].Visible = true;
+            dataGridView1.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView1.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView1.Columns["ZtrAll"].Visible = true;
+            dataGridView1.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView1.Columns["ZtrIF"].Visible = true;
+            dataGridView1.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView1.Columns["ZtrIFdr"].Visible = true;
+            dataGridView1.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView1.Columns["ZtrRB"].Visible = true;
+            dataGridView1.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView1.Columns["ZtrMB"].Visible = true;
+            dataGridView1.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView1.Columns["ZtrOrg"].Visible = true;
+            dataGridView1.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView1.Columns["ZtrKr"].Visible = true;
+            dataGridView1.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView1.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview2
+            var dt2 = db4e.GetSqlDataSource3(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView2.DataSource = dt2.DefaultView;
+            for (int i = 0; i < dataGridView2.ColumnCount; i++)
+                dataGridView2.Columns[i].Visible = false;
+            dataGridView2.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView2.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView2.Columns["КодОснНапр"].Visible = true;
+            dataGridView2.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView2.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView2.Columns["НомерСтроки"].Visible = true;
+            dataGridView2.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView2.Columns["Наименование"].ReadOnly = true;
+            dataGridView2.Columns["Наименование"].Visible = true;
+            dataGridView2.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView2.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView2.Columns["Date_vndr"].Visible = true;
+            dataGridView2.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView2.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView2.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView2.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView2.Columns["VTpl"].Visible = true;
+            dataGridView2.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView2.Columns["EkUslTpl"].Visible = true;
+            dataGridView2.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView2.Columns["EkRub"].Visible = true;
+            dataGridView2.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView2.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView2.Columns["ZtrAll"].Visible = true;
+            dataGridView2.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView2.Columns["ZtrIF"].Visible = true;
+            dataGridView2.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView2.Columns["ZtrIFdr"].Visible = true;
+            dataGridView2.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView2.Columns["ZtrRB"].Visible = true;
+            dataGridView2.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView2.Columns["ZtrMB"].Visible = true;
+            dataGridView2.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView2.Columns["ZtrOrg"].Visible = true;
+            dataGridView2.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView2.Columns["ZtrKr"].Visible = true;
+            dataGridView2.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView2.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview3
+            var dt3 = db4e.GetSqlDataSource4(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView3.DataSource = dt3.DefaultView;
+            for (int i = 0; i < dataGridView3.ColumnCount; i++)
+                dataGridView3.Columns[i].Visible = false;
+            dataGridView3.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView3.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView3.Columns["КодОснНапр"].Visible = true;
+            dataGridView3.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView3.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView3.Columns["НомерСтроки"].Visible = true;
+            dataGridView3.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView3.Columns["Наименование"].ReadOnly = true;
+            dataGridView3.Columns["Наименование"].Visible = true;
+            dataGridView3.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView3.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView3.Columns["Date_vndr"].Visible = true;
+            dataGridView3.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView3.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView3.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView3.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView3.Columns["VTpl"].ReadOnly = true;
+            dataGridView3.Columns["VTpl"].Visible = true;
+            dataGridView3.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView3.Columns["EkUslTpl"].Visible = true;
+            dataGridView3.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView3.Columns["EkRub"].Visible = true;
+            dataGridView3.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView3.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView3.Columns["ZtrAll"].Visible = true;
+            dataGridView3.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView3.Columns["ZtrIF"].ReadOnly = true;
+            dataGridView3.Columns["ZtrIF"].Visible = true;
+            dataGridView3.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView3.Columns["ZtrIFdr"].ReadOnly = true;
+            dataGridView3.Columns["ZtrIFdr"].Visible = true;
+            dataGridView3.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView3.Columns["ZtrRB"].ReadOnly = true;
+            dataGridView3.Columns["ZtrRB"].Visible = true;
+            dataGridView3.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView3.Columns["ZtrMB"].ReadOnly = true;
+            dataGridView3.Columns["ZtrMB"].Visible = true;
+            dataGridView3.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView3.Columns["ZtrOrg"].ReadOnly = true;
+            dataGridView3.Columns["ZtrOrg"].Visible = true;
+            dataGridView3.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView3.Columns["ZtrKr"].ReadOnly = true;
+            dataGridView3.Columns["ZtrKr"].Visible = true;
+            dataGridView3.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView3.Columns["ZtrOther"].ReadOnly = true;
+            dataGridView3.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview7
+            var dt7 = db4e.GetSqlDataSource8(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView7.DataSource = dt7.DefaultView;
+            for (int i = 0; i < dataGridView7.ColumnCount; i++)
+                dataGridView7.Columns[i].Visible = false;
+            dataGridView7.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView7.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView7.Columns["КодОснНапр"].Visible = true;
+            dataGridView7.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView7.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView7.Columns["НомерСтроки"].Visible = true;
+            dataGridView7.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView7.Columns["Наименование"].ReadOnly = true;
+            dataGridView7.Columns["Наименование"].Visible = true;
+            dataGridView7.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView7.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView7.Columns["Date_vndr"].Visible = true;
+            dataGridView7.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView7.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView7.Columns["КодТэрДо"].Visible = true;
+            dataGridView7.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView7.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView7.Columns["КодТэрПосле"].Visible = true;
+            dataGridView7.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView7.Columns["VTpl"].Visible = true;
+            dataGridView7.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView7.Columns["VRub"].Visible = true;
+            dataGridView7.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView7.Columns["EkUslTpl"].Visible = true;
+            dataGridView7.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView7.Columns["EkRub"].Visible = true;
+            dataGridView7.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView7.Columns["fact"].Visible = true;
+            dataGridView7.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView7.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView7.Columns["ZtrAll"].Visible = true;
+            dataGridView7.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView7.Columns["ZtrIF"].Visible = true;
+            dataGridView7.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView7.Columns["ZtrIFdr"].Visible = true;
+            dataGridView7.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView7.Columns["ZtrRB"].Visible = true;
+            dataGridView7.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView7.Columns["ZtrMB"].Visible = true;
+            dataGridView7.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView7.Columns["ZtrOrg"].Visible = true;
+            dataGridView7.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView7.Columns["ZtrKr"].Visible = true;
+            dataGridView7.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView7.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview8
+            var dt8 = db4e.GetSqlDataSource9(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView8.DataSource = dt8.DefaultView;
+            for (int i = 0; i < dataGridView8.ColumnCount; i++)
+                dataGridView8.Columns[i].Visible = false;
+            dataGridView8.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView8.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView8.Columns["КодОснНапр"].Visible = true;
+            dataGridView8.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView8.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView8.Columns["НомерСтроки"].Visible = true;
+            dataGridView8.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView8.Columns["Наименование"].ReadOnly = true;
+            dataGridView8.Columns["Наименование"].Visible = true;
+            dataGridView8.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView8.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView8.Columns["Date_vndr"].Visible = true;
+            dataGridView8.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView8.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView8.Columns["КодТэрДо"].Visible = true;
+            dataGridView8.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView8.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView8.Columns["КодТэрПосле"].Visible = true;
+            dataGridView8.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView8.Columns["VTpl"].Visible = true;
+            dataGridView8.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView8.Columns["VRub"].Visible = true;
+            dataGridView8.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView8.Columns["EkUslTpl"].Visible = true;
+            dataGridView8.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView8.Columns["EkRub"].Visible = true;
+            dataGridView8.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView8.Columns["fact"].Visible = true;
+            dataGridView8.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView8.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView8.Columns["ZtrAll"].Visible = true;
+            dataGridView8.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView8.Columns["ZtrIF"].Visible = true;
+            dataGridView8.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView8.Columns["ZtrIFdr"].Visible = true;
+            dataGridView8.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView8.Columns["ZtrRB"].Visible = true;
+            dataGridView8.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView8.Columns["ZtrMB"].Visible = true;
+            dataGridView8.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView8.Columns["ZtrOrg"].Visible = true;
+            dataGridView8.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView8.Columns["ZtrKr"].Visible = true;
+            dataGridView8.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView8.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview9
+            var dt9 = db4e.GetSqlDataSource10(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+            dataGridView9.DataSource = dt9.DefaultView;
+            for (int i = 0; i < dataGridView9.ColumnCount; i++)
+                dataGridView9.Columns[i].Visible = false;
+            dataGridView9.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView9.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView9.Columns["КодОснНапр"].Visible = true;
+            dataGridView9.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView9.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView9.Columns["НомерСтроки"].Visible = true;
+            dataGridView9.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView9.Columns["Наименование"].ReadOnly = true;
+            dataGridView9.Columns["Наименование"].Visible = true;
+            dataGridView9.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView9.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView9.Columns["Date_vndr"].Visible = true;
+            dataGridView9.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView9.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView9.Columns["КодТэрДо"].Visible = true;
+            dataGridView9.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView9.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView9.Columns["КодТэрПосле"].Visible = true;
+            dataGridView9.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView9.Columns["VTpl"].Visible = true;
+            dataGridView9.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView9.Columns["VRub"].Visible = true;
+            dataGridView9.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView9.Columns["EkUslTpl"].Visible = true;
+            dataGridView9.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView9.Columns["EkRub"].Visible = true;
+            dataGridView9.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView9.Columns["fact"].Visible = true;
+            dataGridView9.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView9.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView9.Columns["ZtrAll"].Visible = true;
+            dataGridView9.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView9.Columns["ZtrIF"].Visible = true;
+            dataGridView9.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView9.Columns["ZtrIFdr"].Visible = true;
+            dataGridView9.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView9.Columns["ZtrRB"].Visible = true;
+            dataGridView9.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView9.Columns["ZtrMB"].Visible = true;
+            dataGridView9.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView9.Columns["ZtrOrg"].Visible = true;
+            dataGridView9.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView9.Columns["ZtrKr"].Visible = true;
+            dataGridView9.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView9.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview23
+            var d14_old = db4e.GetSqlDataSource14_old(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView23.DataSource = d14_old.DefaultView;
+            for (int i = 0; i < dataGridView23.ColumnCount; i++)
+                dataGridView23.Columns[i].Visible = false;
+            dataGridView23.Columns["namepok"].HeaderText = "Наименование показателей";
+            dataGridView23.Columns["namepok"].ReadOnly = true;
+            dataGridView23.Columns["namepok"].Visible = true;
+            dataGridView23.Columns["edizm"].HeaderText = "Единица измерения";
+            dataGridView23.Columns["edizm"].ReadOnly = true;
+            dataGridView23.Columns["edizm"].Visible = true;
+            dataGridView23.Columns["pln"].HeaderText = "По плану";
+            dataGridView23.Columns["pln"].ReadOnly = true;
+            dataGridView23.Columns["pln"].Visible = true;
+            dataGridView23.Columns["fct"].HeaderText = "Фактически";
+            dataGridView23.Columns["fct"].ReadOnly = true;
+            dataGridView23.Columns["fct"].Visible = true;
+            dataGridView23.Columns["prc"].HeaderText = "% выполнения";
+            dataGridView23.Columns["prc"].ReadOnly = true;
+            dataGridView23.Columns["prc"].Visible = true;
+            #endregion
+            #region Gridview14
+            var dt14 = db4e.GetSqlDataSource14(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView14.DataSource = dt14.DefaultView;
+            for (int i = 0; i < dataGridView14.ColumnCount; i++)
+                dataGridView14.Columns[i].Visible = false;
+            dataGridView14.Columns["namepok"].HeaderText = "Наименование показателей";
+            dataGridView14.Columns["namepok"].ReadOnly = true;
+            dataGridView14.Columns["namepok"].Visible = true;
+            dataGridView14.Columns["edizm"].HeaderText = "Единица измерения";
+            dataGridView14.Columns["edizm"].ReadOnly = true;
+            dataGridView14.Columns["edizm"].Visible = true;
+            dataGridView14.Columns["pln"].HeaderText = "По плану";
+            dataGridView14.Columns["pln"].ReadOnly = true;
+            dataGridView14.Columns["pln"].Visible = true;
+            dataGridView14.Columns["fct"].HeaderText = "Фактически";
+            dataGridView14.Columns["fct"].ReadOnly = true;
+            dataGridView14.Columns["fct"].Visible = true;
+            dataGridView14.Columns["prc"].HeaderText = "% выполнения";
+            dataGridView14.Columns["prc"].ReadOnly = true;
+            dataGridView14.Columns["prc"].Visible = true;
+            #endregion
+            #region Gridview15
+            var dt17 = db4e.GetSqlDataSource17(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView15.DataSource = dt17.DefaultView;
+            for (int i = 0; i < dataGridView15.ColumnCount; i++)
+                dataGridView15.Columns[i].Visible = false;
+            dataGridView15.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView15.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView15.Columns["КодОснНапр"].Visible = true;
+            dataGridView15.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView15.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView15.Columns["НомерСтроки"].Visible = true;
+            dataGridView15.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView15.Columns["Наименование"].ReadOnly = true;
+            dataGridView15.Columns["Наименование"].Visible = true;
+            dataGridView15.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView15.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView15.Columns["Date_vndr"].Visible = true;
+            dataGridView15.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView15.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView15.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView15.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView15.Columns["VTpl"].Visible = true;
+            dataGridView15.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView15.Columns["EkUslTpl"].Visible = true;
+            dataGridView15.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView15.Columns["EkRub"].Visible = true;
+            dataGridView15.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView15.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView15.Columns["ZtrAll"].Visible = true;
+            dataGridView15.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView15.Columns["ZtrIF"].Visible = true;
+            dataGridView15.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView15.Columns["ZtrIFdr"].Visible = true;
+            dataGridView15.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView15.Columns["ZtrRB"].Visible = true;
+            dataGridView15.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView15.Columns["ZtrMB"].Visible = true;
+            dataGridView15.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView15.Columns["ZtrOrg"].Visible = true;
+            dataGridView15.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView15.Columns["ZtrKr"].Visible = true;
+            dataGridView15.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView15.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview16
+            var dt18 = db4e.GetSqlDataSource18(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView16.DataSource = dt18.DefaultView;
+            for (int i = 0; i < dataGridView16.ColumnCount; i++)
+                dataGridView16.Columns[i].Visible = false;
+            dataGridView16.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView16.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView16.Columns["КодОснНапр"].Visible = true;
+            dataGridView16.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView16.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView16.Columns["НомерСтроки"].Visible = true;
+            dataGridView16.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView16.Columns["Наименование"].ReadOnly = true;
+            dataGridView16.Columns["Наименование"].Visible = true;
+            dataGridView16.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView16.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView16.Columns["Date_vndr"].Visible = true;
+            dataGridView16.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView16.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView16.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView16.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView16.Columns["VTpl"].Visible = true;
+            dataGridView16.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView16.Columns["EkUslTpl"].Visible = true;
+            dataGridView16.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView16.Columns["EkRub"].Visible = true;
+            dataGridView16.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView16.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView16.Columns["ZtrAll"].Visible = true;
+            dataGridView16.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView16.Columns["ZtrIF"].Visible = true;
+            dataGridView16.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView16.Columns["ZtrIFdr"].Visible = true;
+            dataGridView16.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView16.Columns["ZtrRB"].Visible = true;
+            dataGridView16.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView16.Columns["ZtrMB"].Visible = true;
+            dataGridView16.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView16.Columns["ZtrOrg"].Visible = true;
+            dataGridView16.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView16.Columns["ZtrKr"].Visible = true;
+            dataGridView16.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView16.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview17
+            var dt19 = db4e.GetSqlDataSource19(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView17.DataSource = dt19.DefaultView;
+            for (int i = 0; i < dataGridView17.ColumnCount; i++)
+                dataGridView17.Columns[i].Visible = false;
+            dataGridView17.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView17.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView17.Columns["КодОснНапр"].Visible = true;
+            dataGridView17.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView17.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView17.Columns["НомерСтроки"].Visible = true;
+            dataGridView17.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView17.Columns["Наименование"].ReadOnly = true;
+            dataGridView17.Columns["Наименование"].Visible = true;
+            dataGridView17.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView17.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView17.Columns["Date_vndr"].Visible = true;
+            dataGridView17.Columns["ЕдИзмерМеропр"].HeaderText = "Единица измерения";
+            dataGridView17.Columns["ЕдИзмерМеропр"].ReadOnly = true;
+            dataGridView17.Columns["ЕдИзмерМеропр"].Visible = true;
+            dataGridView17.Columns["VTpl"].HeaderText = "Объем внедрения с начала отчетного года";
+            dataGridView17.Columns["VTpl"].ReadOnly = true;
+            dataGridView17.Columns["VTpl"].Visible = true;
+            dataGridView17.Columns["EkUslTpl"].HeaderText = "Фактическая экономия ТЭР, т усл. топл.";
+            dataGridView17.Columns["EkUslTpl"].Visible = true;
+            dataGridView17.Columns["EkRub"].HeaderText = "Фактическая экономия ТЭР, млн. руб.";
+            dataGridView17.Columns["EkRub"].Visible = true;
+            dataGridView17.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView17.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView17.Columns["ZtrAll"].Visible = true;
+            dataGridView17.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView17.Columns["ZtrIF"].ReadOnly = true;
+            dataGridView17.Columns["ZtrIF"].Visible = true;
+            dataGridView17.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView17.Columns["ZtrIFdr"].ReadOnly = true;
+            dataGridView17.Columns["ZtrIFdr"].Visible = true;
+            dataGridView17.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView17.Columns["ZtrRB"].ReadOnly = true;
+            dataGridView17.Columns["ZtrRB"].Visible = true;
+            dataGridView17.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView17.Columns["ZtrMB"].ReadOnly = true;
+            dataGridView17.Columns["ZtrMB"].Visible = true;
+            dataGridView17.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView17.Columns["ZtrOrg"].ReadOnly = true;
+            dataGridView17.Columns["ZtrOrg"].Visible = true;
+            dataGridView17.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView17.Columns["ZtrKr"].ReadOnly = true;
+            dataGridView17.Columns["ZtrKr"].Visible = true;
+            dataGridView17.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView17.Columns["ZtrOther"].ReadOnly = true;
+            dataGridView17.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview18
+            var dt20 = db4e.GetSqlDataSource20(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView18.DataSource = dt20.DefaultView;
+            for (int i = 0; i < dataGridView18.ColumnCount; i++)
+                dataGridView18.Columns[i].Visible = false;
+            dataGridView18.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView18.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView18.Columns["КодОснНапр"].Visible = true;
+            dataGridView18.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView18.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView18.Columns["НомерСтроки"].Visible = true;
+            dataGridView18.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView18.Columns["Наименование"].ReadOnly = true;
+            dataGridView18.Columns["Наименование"].Visible = true;
+            dataGridView18.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView18.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView18.Columns["Date_vndr"].Visible = true;
+            dataGridView18.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView18.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView18.Columns["КодТэрДо"].Visible = true;
+            dataGridView18.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView18.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView18.Columns["КодТэрПосле"].Visible = true;
+            dataGridView18.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView18.Columns["VTpl"].Visible = true;
+            dataGridView18.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView18.Columns["VRub"].Visible = true;
+            dataGridView18.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView18.Columns["EkUslTpl"].Visible = true;
+            dataGridView18.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView18.Columns["EkRub"].Visible = true;
+            dataGridView18.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView18.Columns["fact"].Visible = true;
+            dataGridView18.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView18.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView18.Columns["ZtrAll"].Visible = true;
+            dataGridView18.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView18.Columns["ZtrIF"].Visible = true;
+            dataGridView18.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView18.Columns["ZtrIFdr"].Visible = true;
+            dataGridView18.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView18.Columns["ZtrRB"].Visible = true;
+            dataGridView18.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView18.Columns["ZtrMB"].Visible = true;
+            dataGridView18.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView18.Columns["ZtrOrg"].Visible = true;
+            dataGridView18.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView18.Columns["ZtrKr"].Visible = true;
+            dataGridView18.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView18.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview19
+            var dt21 = db4e.GetSqlDataSource21(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView19.DataSource = dt21.DefaultView;
+            for (int i = 0; i < dataGridView19.ColumnCount; i++)
+                dataGridView19.Columns[i].Visible = false;
+            dataGridView19.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView19.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView19.Columns["КодОснНапр"].Visible = true;
+            dataGridView19.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView19.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView19.Columns["НомерСтроки"].Visible = true;
+            dataGridView19.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView19.Columns["Наименование"].ReadOnly = true;
+            dataGridView19.Columns["Наименование"].Visible = true;
+            dataGridView19.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView19.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView19.Columns["Date_vndr"].Visible = true;
+            dataGridView19.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView19.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView19.Columns["КодТэрДо"].Visible = true;
+            dataGridView19.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView19.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView19.Columns["КодТэрПосле"].Visible = true;
+            dataGridView19.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView19.Columns["VTpl"].Visible = true;
+            dataGridView19.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView19.Columns["VRub"].Visible = true;
+            dataGridView19.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView19.Columns["EkUslTpl"].Visible = true;
+            dataGridView19.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView19.Columns["EkRub"].Visible = true;
+            dataGridView19.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView19.Columns["fact"].Visible = true;
+            dataGridView19.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView19.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView19.Columns["ZtrAll"].Visible = true;
+            dataGridView19.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView19.Columns["ZtrIF"].Visible = true;
+            dataGridView19.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView19.Columns["ZtrIFdr"].Visible = true;
+            dataGridView19.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView19.Columns["ZtrRB"].Visible = true;
+            dataGridView19.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView19.Columns["ZtrMB"].Visible = true;
+            dataGridView19.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView19.Columns["ZtrOrg"].Visible = true;
+            dataGridView19.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView19.Columns["ZtrKr"].Visible = true;
+            dataGridView19.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView19.Columns["ZtrOther"].Visible = true;
+            #endregion
+            #region Gridview20
+            var dt22 = db4e.GetSqlDataSource22(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+            dataGridView20.DataSource = dt22.DefaultView;
+            for (int i = 0; i < dataGridView20.ColumnCount; i++)
+                dataGridView20.Columns[i].Visible = false;
+            dataGridView20.Columns["КодОснНапр"].HeaderText = "Код основных направлений энергосбережения";
+            dataGridView20.Columns["КодОснНапр"].ReadOnly = true;
+            dataGridView20.Columns["КодОснНапр"].Visible = true;
+            dataGridView20.Columns["НомерСтроки"].HeaderText = "Номер мероприятия в плане";
+            dataGridView20.Columns["НомерСтроки"].ReadOnly = true;
+            dataGridView20.Columns["НомерСтроки"].Visible = true;
+            dataGridView20.Columns["Наименование"].HeaderText = "Наименование мероприятия";
+            dataGridView20.Columns["Наименование"].ReadOnly = true;
+            dataGridView20.Columns["Наименование"].Visible = true;
+            dataGridView20.Columns["Date_vndr"].HeaderText = "Дата внедрения";
+            dataGridView20.Columns["Date_vndr"].ReadOnly = true;
+            dataGridView20.Columns["Date_vndr"].Visible = true;
+            dataGridView20.Columns["КодТэрДо"].HeaderText = "Код топлива до внедрения";
+            dataGridView20.Columns["КодТэрДо"].ReadOnly = true;
+            dataGridView20.Columns["КодТэрДо"].Visible = true;
+            dataGridView20.Columns["КодТэрПосле"].HeaderText = "Код топлива после внедрения";
+            dataGridView20.Columns["КодТэрПосле"].ReadOnly = true;
+            dataGridView20.Columns["КодТэрПосле"].Visible = true;
+            dataGridView20.Columns["VTpl"].HeaderText = "Объем замещенного топлива, т усл. топл.";
+            dataGridView20.Columns["VTpl"].Visible = true;
+            dataGridView20.Columns["VRub"].HeaderText = "Объем замещенного топлива, млн. руб.";
+            dataGridView20.Columns["VRub"].Visible = true;
+            dataGridView20.Columns["EkUslTpl"].HeaderText = "Увеличение использования МВТ, т усл. топл.";
+            dataGridView20.Columns["EkUslTpl"].Visible = true;
+            dataGridView20.Columns["EkRub"].HeaderText = "Увеличение использования МВТ, млн. руб.";
+            dataGridView20.Columns["EkRub"].Visible = true;
+            dataGridView20.Columns["fact"].HeaderText = "Фактическое снижение затрат на ТЭР, млн. руб.";
+            dataGridView20.Columns["fact"].Visible = true;
+            dataGridView20.Columns["ZtrAll"].HeaderText = "Фактические затраты, всего";
+            dataGridView20.Columns["ZtrAll"].ReadOnly = true;
+            dataGridView20.Columns["ZtrAll"].Visible = true;
+            dataGridView20.Columns["ZtrIF"].HeaderText = "Фактические затраты иннова-ционного фонда Минэнерго";
+            dataGridView20.Columns["ZtrIF"].Visible = true;
+            dataGridView20.Columns["ZtrIFdr"].HeaderText = "Фактические затраты фондов других министерств";
+            dataGridView20.Columns["ZtrIFdr"].Visible = true;
+            dataGridView20.Columns["ZtrRB"].HeaderText = "Фактические затраты республиканского бюджета";
+            dataGridView20.Columns["ZtrRB"].Visible = true;
+            dataGridView20.Columns["ZtrMB"].HeaderText = "Фактические затраты местного бюджета";
+            dataGridView20.Columns["ZtrMB"].Visible = true;
+            dataGridView20.Columns["ZtrOrg"].HeaderText = "Фактические затраты организации";
+            dataGridView20.Columns["ZtrOrg"].Visible = true;
+            dataGridView20.Columns["ZtrKr"].HeaderText = "Фактические затраты льготного кредита";
+            dataGridView20.Columns["ZtrKr"].Visible = true;
+            dataGridView20.Columns["ZtrOther"].HeaderText = "Фактические затраты из других источников";
+            dataGridView20.Columns["ZtrOther"].Visible = true;
+            #endregion
+
+
         }
 
         private void DropDownList13_SelectedIndexChanged(object sender, EventArgs e)
@@ -1744,29 +2374,30 @@ namespace WindowsFormsApp1
                 dataGridView.Columns["НомерСтроки"].DisplayIndex = 1;
                 dataGridView.Columns["Наименование"].DisplayIndex = 2;
                 dataGridView.Columns["Date_vndr"].DisplayIndex = 3;
-                dataGridView.Columns["ЕдИзмерМеропр"].DisplayIndex = 4;
-                dataGridView.Columns["VTpl"].DisplayIndex = 5;
-                dataGridView.Columns["EkUslTpl"].DisplayIndex = 6;
-                dataGridView.Columns["EkRub"].DisplayIndex = 7;
-                dataGridView.Columns["ZtrAll"].DisplayIndex = 8;
-                dataGridView.Columns["ZtrIF"].DisplayIndex = 9;
-                dataGridView.Columns["ZtrIFdr"].DisplayIndex = 10;
-                dataGridView.Columns["ZtrRB"].DisplayIndex = 11;
-                dataGridView.Columns["ZtrMB"].DisplayIndex = 12;
-                dataGridView.Columns["ZtrOrg"].DisplayIndex = 13;
-                dataGridView.Columns["ZtrKr"].DisplayIndex = 14;
-                dataGridView.Columns["ZtrOther"].DisplayIndex = 15;
-                dataGridView.Columns["IdVypMer1"].DisplayIndex = 16;
-                dataGridView.Columns["KodMer"].DisplayIndex = 17;
-                dataGridView.Columns["VRub"].DisplayIndex = 18;
-                dataGridView.Columns["fact"].DisplayIndex = 19;
-                dataGridView.Columns["TypeMer"].DisplayIndex = 20;
-                dataGridView.Columns["razdel"].DisplayIndex = 21;
-                dataGridView.Columns["curkvart"].DisplayIndex = 22;
-                dataGridView.Columns["curyear"].DisplayIndex = 23;
-                dataGridView.Columns["PdrId"].DisplayIndex = 24;
-                dataGridView.Columns["КодТэрДо"].DisplayIndex = 25;
-                dataGridView.Columns["КодТэрПосле"].DisplayIndex = 26;
+                dataGridView.Columns["КодТэрДо"].DisplayIndex = 4;
+                dataGridView.Columns["КодТэрПосле"].DisplayIndex = 5;
+                dataGridView.Columns["ЕдИзмерМеропр"].DisplayIndex = 6;
+                dataGridView.Columns["VTpl"].DisplayIndex = 7;
+                dataGridView.Columns["VRub"].DisplayIndex = 8;
+                dataGridView.Columns["EkUslTpl"].DisplayIndex = 9;
+                dataGridView.Columns["EkRub"].DisplayIndex = 10;
+                dataGridView.Columns["fact"].DisplayIndex = 11;
+                dataGridView.Columns["ZtrAll"].DisplayIndex = 12;
+                dataGridView.Columns["ZtrIF"].DisplayIndex = 13;
+                dataGridView.Columns["ZtrIFdr"].DisplayIndex = 14;
+                dataGridView.Columns["ZtrRB"].DisplayIndex = 15;
+                dataGridView.Columns["ZtrMB"].DisplayIndex = 16;
+                dataGridView.Columns["ZtrOrg"].DisplayIndex = 17;
+                dataGridView.Columns["ZtrKr"].DisplayIndex = 18;
+                dataGridView.Columns["ZtrOther"].DisplayIndex = 19;
+                dataGridView.Columns["IdVypMer1"].DisplayIndex = 20;
+                dataGridView.Columns["KodMer"].DisplayIndex = 21;
+                dataGridView.Columns["TypeMer"].DisplayIndex = 22;
+                dataGridView.Columns["razdel"].DisplayIndex = 23;
+                dataGridView.Columns["curkvart"].DisplayIndex = 24;
+                dataGridView.Columns["curyear"].DisplayIndex = 25;
+                dataGridView.Columns["PdrId"].DisplayIndex = 26;
+
             }
         }
         void DataGridRoColor(DataGridView dataGridView)
@@ -1917,83 +2548,395 @@ namespace WindowsFormsApp1
 
         private void printButton_Click(object sender, EventArgs e)
         {
-            reoGridReport.Load("..\\..\\Reports\\1.xlsx");
+            reoGridReport.Load(Directory.GetCurrentDirectory() + "\\Reports\\1.xlsx");
+            reoGridReport2.Load(Directory.GetCurrentDirectory() + "\\Reports\\2.xlsx");
             var worksheet1 = reoGridReport.CurrentWorksheet;
+            var worksheet2 = reoGridReport2.CurrentWorksheet;
+            comboBox2.SelectedIndex = 0;
             int startrow = 7;
-            for (int i =0; i < dataGridView1.RowCount-1; i++)
+            if (_selectedOrgID != 1)
             {
-                worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView1.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                worksheet1["B" + (startrow + 1)] = Int32.Parse(dataGridView1.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                worksheet1["C" + (startrow + 1)] = dataGridView1.Rows[i].Cells["Наименование"].Value.ToString();
-                worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView1.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                worksheet1["E" + (startrow + 1)] = dataGridView1.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["VTpl"].Value.ToString());
-                worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkRub"].Value.ToString());
-                worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrAll"].Value.ToString());
-                worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIF"].Value.ToString());
-                worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrRB"].Value.ToString());
-                worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrMB"].Value.ToString());
-                worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrKr"].Value.ToString());
-                worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOther"].Value.ToString());
-                startrow++;
-                if ( i < dataGridView1.RowCount - 2)
-                    worksheet1.InsertRows(startrow, 1);               
+                if ((dataGridView1.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView1.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView1.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView1.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView1.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView1.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView1.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView1.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+                startrow += 2;
+                if ((dataGridView2.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView2.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView2.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView2.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView2.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView2.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView2.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView2.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+                startrow += 2;
+                if ((dataGridView3.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView3.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView3.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView3.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView3.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView3.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView3.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView3.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = dataGridView3.Rows[i].Cells["VTpl"].Value.ToString();
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView3.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
             }
-            startrow += 2;
-            for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+            else
             {
-                worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView2.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                worksheet1["B" + (startrow + 1)] = Int32.Parse(dataGridView2.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                worksheet1["C" + (startrow + 1)] = dataGridView2.Rows[i].Cells["Наименование"].Value.ToString();
-                worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView2.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                worksheet1["E" + (startrow + 1)] = dataGridView2.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["VTpl"].Value.ToString());
-                worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkRub"].Value.ToString());
-                worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrAll"].Value.ToString());
-                worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIF"].Value.ToString());
-                worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrRB"].Value.ToString());
-                worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrMB"].Value.ToString());
-                worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrKr"].Value.ToString());
-                worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOther"].Value.ToString());
-                startrow++;
-                if (i < dataGridView2.RowCount - 2)
-                    worksheet1.InsertRows(startrow, 1);
+                if ((dataGridView15.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView15.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView15.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView15.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView15.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView15.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView15.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView15.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView15.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+                startrow += 2;
+                if ((dataGridView16.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView16.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView16.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView16.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView16.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView16.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView16.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView16.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView16.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+                startrow += 2;
+                if ((dataGridView17.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView17.RowCount - 1; i++)
+                    {
+                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView17.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView17.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView17.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet1["C" + (startrow + 1)] = dataGridView17.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView17.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet1["E" + (startrow + 1)] = dataGridView17.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet1["F" + (startrow + 1)] = dataGridView17.Rows[i].Cells["VTpl"].Value.ToString();
+                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView17.RowCount - 2)
+                            worksheet1.InsertRows(startrow, 1);
+                    }
+                }
+
             }
-            startrow += 2;
-            for (int i = 0; i < dataGridView3.RowCount - 1; i++)
+            comboBox2.SelectedIndex = 1;
+            int startrow2 = 7;
+            if (_selectedOrgID != 1)
             {
-                worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView3.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                worksheet1["B" + (startrow + 1)] = Int32.Parse(dataGridView3.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                worksheet1["C" + (startrow + 1)] = dataGridView3.Rows[i].Cells["Наименование"].Value.ToString();
-                worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView3.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                worksheet1["E" + (startrow + 1)] = dataGridView3.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                worksheet1["F" + (startrow + 1)] = dataGridView3.Rows[i].Cells["VTpl"].Value.ToString();
-                worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkRub"].Value.ToString());
-                worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrAll"].Value.ToString());
-                worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIF"].Value.ToString());
-                worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrRB"].Value.ToString());
-                worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrMB"].Value.ToString());
-                worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrKr"].Value.ToString());
-                worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOther"].Value.ToString());
-                startrow++;
-                if (i < dataGridView3.RowCount - 2)
-                    worksheet1.InsertRows(startrow, 1);
+                if ((dataGridView7.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView7.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView7.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView7.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView7.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView7.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
+                else
+                {
+                    startrow2++;
+                }
+                startrow2 += 2;
+                if ((dataGridView8.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView8.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView8.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView8.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView8.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView8.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
+                else
+                {
+                    startrow2++;
+                }
+                startrow2 += 2;
+                if ((dataGridView9.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView9.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView9.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView9.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView9.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView9.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
             }
+            else
+            {
+                if ((dataGridView18.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView18.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView18.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView18.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView18.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView18.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
+                else
+                {
+                    startrow2++;
+                }
+                startrow2 += 2;
+                if ((dataGridView19.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView19.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView19.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView19.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView19.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView19.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
+                else
+                {
+                    startrow2++;
+                }
+                startrow2 += 2;
+                if ((dataGridView20.RowCount - 1) >= 1)
+                {
+                    for (int i = 0; i < dataGridView20.RowCount - 1; i++)
+                    {
+                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView20.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet2["C" + (startrow2 + 1)] = dataGridView20.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView20.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow2++;
+                        if (i < dataGridView20.RowCount - 2)
+                            worksheet2.InsertRows(startrow2, 1);
+                    }
+                }
+
+            }
+
             var workbook = reoGridReport;
             //workbook.Worksheets[1] = worksheet;
             workbook.Worksheets[0].Name = "Приложение1";
-            workbook.Save(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx", unvell.ReoGrid.IO.FileFormat.Excel2007);
-            MessageBox.Show("Отчет " + Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx успешно сохранен.");
-            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
+            workbook.Worksheets[1] = reoGridReport2.CurrentWorksheet;
+            workbook.Worksheets[1].Name = "Приложение2";
+            workbook.Save(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx", unvell.ReoGrid.IO.FileFormat.Excel2007);
+            MessageBox.Show("Отчет " + Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx успешно сохранен.");
+            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Report_4e" + "_"  + "CompanyId_"+ _selectedOrgID + "_"+ DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
         }
     }
 }

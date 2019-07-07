@@ -131,8 +131,15 @@
     <EmbeddedResource Include="ActivitiesPlanHelpers\SetupActivitiesGroup.resx">
       <DependentUpon>SetupActivitiesGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ActivitiesPlanHelpers\ReportForms\Report1.xlsx" />
-    <None Include="ActivitiesPlanHelpers\ReportForms\Report2.xlsx" />
+    <Content Include="ActivitiesPlanHelpers\ReportForms\Report1.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ActivitiesPlanHelpers\ReportForms\Report2.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ActivitiesPlanHelpers\ReportForms\Report2_1.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -143,6 +150,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Reports\1.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\2.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
