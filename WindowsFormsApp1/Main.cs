@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
                 dataGridViewActivitiesPlan1.DataSource = source1;
 
                 var source2 = new dbActivitiesPlan().GetTable(2, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
-                if(source2==null)
+                if (source2 == null)
                 {
                     int k = 0;
                 }
@@ -354,6 +354,10 @@ namespace WindowsFormsApp1
             { InitEditActivitiesPlan(); }
             if (tabControl1.SelectedIndex == 1)
             { InitActivitiesPlan(); }
+            if (tabControl1.SelectedIndex == 1)
+            {
+                DropDownList13_SelectedIndexChanged(this, EventArgs.Empty);
+            }
         }
 
         private void SectionСomboBoxActivitiesPlan_SelectedIndexChanged(object sender, EventArgs e)
@@ -559,30 +563,8 @@ namespace WindowsFormsApp1
                     tabControl2.SelectedTab = View1;
                     #region Gridview1
                     var dt = db4e.GetSqlDataSource2(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
-                    //DataRow row = dt.NewRow();
-                    //foreach (DataColumn col in dt.Columns)
-                    //{
-                    //    if (col.ColumnName != "Date_vndr")
-                    //        row[col.ColumnName] = 0;
-                    //    else
-                    //    {
-                    //        row[col.ColumnName] = DateTime.Now;
-                    //    }
-                    //}
-
-                    //row["EkUslTpl"] = dt.Compute("Sum(EkUslTpl)", "EkUslTpl >= 0");
-                    //row["EkRub"] = dt.Compute("Sum(EkRub)", "EkRub >= 0");
-                    ////row["ZtrAll"] = dt.Compute("Sum(ZtrAll)", "ZtrAll != 0");
-                    ////row["ZtrIF"] = dt.Compute("Sum(ZtrIF)", "ZtrIF != 0");
-                    ////row["ZtrIFdr"] = dt.Compute("Sum(ZtrIFdr)", "ZtrIFdr != 0");
-                    ////row["ZtrRB"] = dt.Compute("Sum(ZtrRB)", "ZtrRB != 0");
-                    ////row["ZtrMB"] = dt.Compute("Sum(ZtrMB)", "ZtrMB != 0");
-                    ////row["ZtrOrg"] = dt.Compute("Sum(ZtrOrg)", "ZtrOrg != 0");
-                    ////row["ZtrKr"] = dt.Compute("Sum(ZtrKr)", "ZtrKr != 0");
-                    ////row["ZtrOther"] = dt.Compute("Sum(ZtrOther)", "ZtrOther != 0");
-                    ////row["Наименование"] = "Итого";
-                    //dt.Rows.Add(row);
-
+                    if (dt.Rows.Count > 0)
+                        addFinalRow(dt);
                     dataGridView1.DataSource = dt.DefaultView;
                     for (int i = 0; i < dataGridView1.ColumnCount; i++)
                         dataGridView1.Columns[i].Visible = false;
@@ -627,6 +609,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview2
                     var dt2 = db4e.GetSqlDataSource3(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt2.Rows.Count > 0)
+                        addFinalRow(dt2);
                     dataGridView2.DataSource = dt2.DefaultView;
                     for (int i = 0; i < dataGridView2.ColumnCount; i++)
                         dataGridView2.Columns[i].Visible = false;
@@ -671,6 +655,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview3
                     var dt3 = db4e.GetSqlDataSource4(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt3.Rows.Count > 0)
+                        addFinalRow(dt3);
                     dataGridView3.DataSource = dt3.DefaultView;
                     for (int i = 0; i < dataGridView3.ColumnCount; i++)
                         dataGridView3.Columns[i].Visible = false;
@@ -727,12 +713,29 @@ namespace WindowsFormsApp1
                     DataGridRoColor(dataGridView1);
                     DataGridRoColor(dataGridView2);
                     DataGridRoColor(dataGridView3);
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].ReadOnly = true;
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView2.Rows.Count > 0)
+                    {
+                        dataGridView2.Rows[dataGridView2.Rows.Count - 1].ReadOnly = true;
+                        dataGridView2.Rows[dataGridView2.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView3.Rows.Count > 0)
+                    {
+                        dataGridView3.Rows[dataGridView3.Rows.Count - 1].ReadOnly = true;
+                        dataGridView3.Rows[dataGridView3.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
                     break;
                 case 2:
                     // Раздел 2 
                     tabControl2.SelectedTab = View3;
                     #region Gridview7
                     var dt7 = db4e.GetSqlDataSource8(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt7.Rows.Count > 0)
+                        addFinalRow(dt7);
                     dataGridView7.DataSource = dt7.DefaultView;
                     for (int i = 0; i < dataGridView7.ColumnCount; i++)
                         dataGridView7.Columns[i].Visible = false;
@@ -784,6 +787,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview8
                     var dt8 = db4e.GetSqlDataSource9(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt8.Rows.Count > 0)
+                        addFinalRow(dt8);
                     dataGridView8.DataSource = dt8.DefaultView;
                     for (int i = 0; i < dataGridView8.ColumnCount; i++)
                         dataGridView8.Columns[i].Visible = false;
@@ -835,6 +840,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview9
                     var dt9 = db4e.GetSqlDataSource10(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt9.Rows.Count > 0)
+                        addFinalRow(dt9);
                     dataGridView9.DataSource = dt9.DefaultView;
                     for (int i = 0; i < dataGridView9.ColumnCount; i++)
                         dataGridView9.Columns[i].Visible = false;
@@ -890,6 +897,21 @@ namespace WindowsFormsApp1
                     DataGridRoColor(dataGridView7);
                     DataGridRoColor(dataGridView8);
                     DataGridRoColor(dataGridView9);
+                    if (dataGridView7.Rows.Count > 0)
+                    {
+                        dataGridView7.Rows[dataGridView7.Rows.Count - 1].ReadOnly = true;
+                        dataGridView7.Rows[dataGridView7.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView8.Rows.Count > 0)
+                    {
+                        dataGridView8.Rows[dataGridView8.Rows.Count - 1].ReadOnly = true;
+                        dataGridView8.Rows[dataGridView8.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView9.Rows.Count > 0)
+                    {
+                        dataGridView9.Rows[dataGridView9.Rows.Count - 1].ReadOnly = true;
+                        dataGridView9.Rows[dataGridView9.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
                     break;
                 case 3:
                     // Раздел 3 
@@ -1313,6 +1335,8 @@ namespace WindowsFormsApp1
                     tabControl2.SelectedTab = View6;
                     #region Gridview15
                     var dt17 = db4e.GetSqlDataSource17(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt17.Rows.Count > 0)
+                        addFinalRow(dt17);
                     dataGridView15.DataSource = dt17.DefaultView;
                     for (int i = 0; i < dataGridView15.ColumnCount; i++)
                         dataGridView15.Columns[i].Visible = false;
@@ -1357,6 +1381,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview16
                     var dt18 = db4e.GetSqlDataSource18(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt18.Rows.Count > 0)
+                        addFinalRow(dt18);
                     dataGridView16.DataSource = dt18.DefaultView;
                     for (int i = 0; i < dataGridView16.ColumnCount; i++)
                         dataGridView16.Columns[i].Visible = false;
@@ -1401,6 +1427,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview17
                     var dt19 = db4e.GetSqlDataSource19(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt19.Rows.Count > 0)
+                        addFinalRow(dt19);
                     dataGridView17.DataSource = dt19.DefaultView;
                     for (int i = 0; i < dataGridView17.ColumnCount; i++)
                         dataGridView17.Columns[i].Visible = false;
@@ -1457,12 +1485,29 @@ namespace WindowsFormsApp1
                     DataGridRoColor(dataGridView15);
                     DataGridRoColor(dataGridView16);
                     DataGridRoColor(dataGridView17);
+                    if (dataGridView15.Rows.Count > 0)
+                    {
+                        dataGridView15.Rows[dataGridView15.Rows.Count - 1].ReadOnly = true;
+                        dataGridView15.Rows[dataGridView15.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView16.Rows.Count > 0)
+                    {
+                        dataGridView16.Rows[dataGridView16.Rows.Count - 1].ReadOnly = true;
+                        dataGridView16.Rows[dataGridView16.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView17.Rows.Count > 0)
+                    {
+                        dataGridView17.Rows[dataGridView17.Rows.Count - 1].ReadOnly = true;
+                        dataGridView17.Rows[dataGridView17.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
                     break;
                 case 200:
                     // Раздел 2 сводный
                     tabControl2.SelectedTab = View7;
                     #region Gridview18
                     var dt20 = db4e.GetSqlDataSource20(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt20.Rows.Count > 0)
+                        addFinalRow(dt20);
                     dataGridView18.DataSource = dt20.DefaultView;
                     for (int i = 0; i < dataGridView18.ColumnCount; i++)
                         dataGridView18.Columns[i].Visible = false;
@@ -1514,6 +1559,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview19
                     var dt21 = db4e.GetSqlDataSource21(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt21.Rows.Count > 0)
+                        addFinalRow(dt21);
                     dataGridView19.DataSource = dt21.DefaultView;
                     for (int i = 0; i < dataGridView19.ColumnCount; i++)
                         dataGridView19.Columns[i].Visible = false;
@@ -1565,6 +1612,8 @@ namespace WindowsFormsApp1
                     #endregion
                     #region Gridview20
                     var dt22 = db4e.GetSqlDataSource22(MakeQuater(_month), _year, _selectedOrgID, Convert.ToInt32(comboBox2.SelectedValue), radioButton1.Checked, radioButton2.Checked);
+                    if (dt22.Rows.Count > 0)
+                        addFinalRow(dt22);
                     dataGridView20.DataSource = dt22.DefaultView;
                     for (int i = 0; i < dataGridView20.ColumnCount; i++)
                         dataGridView20.Columns[i].Visible = false;
@@ -1617,6 +1666,21 @@ namespace WindowsFormsApp1
                     DataGridRoColor(dataGridView18);
                     DataGridRoColor(dataGridView19);
                     DataGridRoColor(dataGridView20);
+                    if (dataGridView18.Rows.Count > 0)
+                    {
+                        dataGridView18.Rows[dataGridView18.Rows.Count - 1].ReadOnly = true;
+                        dataGridView18.Rows[dataGridView18.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView19.Rows.Count > 0)
+                    {
+                        dataGridView19.Rows[dataGridView19.Rows.Count - 1].ReadOnly = true;
+                        dataGridView19.Rows[dataGridView19.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
+                    if (dataGridView20.Rows.Count > 0)
+                    {
+                        dataGridView20.Rows[dataGridView20.Rows.Count - 1].ReadOnly = true;
+                        dataGridView20.Rows[dataGridView20.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    }
                     break;
                 case 300:
                     // Раздел 3 сводный
@@ -1800,10 +1864,42 @@ namespace WindowsFormsApp1
             for (int i = 0; i < dataGridView.ColumnCount; i++)
             {
                 if (dataGridView.Columns[i].ReadOnly == true)
-                    dataGridView.Columns[i].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                    dataGridView.Columns[i].DefaultCellStyle.BackColor = Color.LightGray;
                 else
                     dataGridView.Columns[i].DefaultCellStyle.BackColor = Color.White;
             }
+        }
+
+        void addFinalRow(DataTable dt)
+        {
+            DataRow row = dt.NewRow();
+            foreach (DataColumn col in dt.Columns)
+            {
+                if (col.ColumnName != "Date_vndr")
+                    row[col.ColumnName] = 0;
+                else
+                {
+                    row[col.ColumnName] = DateTime.Now;
+                }
+            }
+            row["EkUslTpl"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkUslTpl)", "").ToString()) ? dt.Compute("Sum(EkUslTpl)", "") : 0;
+            row["EkRub"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkRub)", "").ToString()) ? dt.Compute("Sum(EkRub)", "") : 0;
+            row["ZtrAll"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrAll)", "").ToString()) ? dt.Compute("Sum(ZtrAll)", "") : 0;
+            row["ZtrIF"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIF)", "").ToString()) ? dt.Compute("Sum(ZtrIF)", "") : 0;
+            row["ZtrIFdr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIFdr)", "").ToString()) ? dt.Compute("Sum(ZtrIFdr)", "") : 0;
+            row["ZtrRB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrRB)", "").ToString()) ? dt.Compute("Sum(ZtrRB)", "") : 0;
+            row["ZtrMB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrMB)", "").ToString()) ? dt.Compute("Sum(ZtrMB)", "") : 0;
+            row["ZtrOrg"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOrg)", "").ToString()) ? dt.Compute("Sum(ZtrOrg)", "") : 0;
+            row["ZtrKr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrKr)", "").ToString()) ? dt.Compute("Sum(ZtrKr)", "") : 0;
+            row["ZtrOther"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOther)", "").ToString()) ? dt.Compute("Sum(ZtrOther)", "") : 0;
+            row["fact"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(fact)", "").ToString()) ? dt.Compute("Sum(fact)", "") : 0;
+            row["Наименование"] = "Итого";
+            row["КодОснНапр"] = DBNull.Value;
+            row["НомерСтроки"] = DBNull.Value;
+            row["КодТэрДо"] = DBNull.Value;
+            row["КодТэрПосле"] = DBNull.Value;
+            row["ЕдИзмерМеропр"] = " ";
+            dt.Rows.Add(row);
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -1941,6 +2037,95 @@ namespace WindowsFormsApp1
             DropDownList13_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
+        int UpdtateWorksheet(DataGridView dataGridView, unvell.ReoGrid.Worksheet worksheet, int startrow, int type)
+        {
+            if (type == 1)
+            {
+                if ((dataGridView.RowCount) >= 1)
+                {
+                    for (int i = 0; i < dataGridView.RowCount - 1; i++)
+                    {
+                        worksheet["A" + (startrow + 1)] = Int32.Parse(dataGridView.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet["D" + (startrow + 1)] = DateTime.Parse(dataGridView.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet["E" + (startrow + 1)] = dataGridView.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
+                        worksheet["F" + (startrow + 1)] = dataGridView.Rows[i].Cells["VTpl"].Value.ToString();
+                        worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView.RowCount - 2)
+                            worksheet.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+            }
+            if(type == 2)
+            {
+                if ((dataGridView.RowCount) >= 1)
+                {
+                    for (int i = 0; i < dataGridView.RowCount - 1; i++)
+                    {
+                        worksheet["A" + (startrow + 1)] = Int32.Parse(dataGridView.Rows[i].Cells["КодОснНапр"].Value.ToString());
+                        worksheet["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView.Rows[i].Cells["НомерСтроки"].Value.ToString());
+                        worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                        worksheet["D" + (startrow + 1)] = DateTime.Parse(dataGridView.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
+                        worksheet["E" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView.Rows[i].Cells["КодТэрДо"].Value.ToString());
+                        worksheet["F" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView.Rows[i].Cells["КодТэрПосле"].Value.ToString());
+                        worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VTpl"].Value.ToString());
+                        worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VRub"].Value.ToString());
+                        worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                        worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                        worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["fact"].Value.ToString());
+                        worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                        worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                        worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                        worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                        worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                        worksheet["Q" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                        worksheet["R" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                        worksheet["S" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                        startrow++;
+                        if (i < dataGridView.RowCount - 2)
+                            worksheet.InsertRows(startrow, 1);
+                    }
+                }
+                else
+                {
+                    startrow++;
+                }
+            }
+            if (type == 3)
+            {
+                int i = dataGridView.Rows.Count - 1;
+                worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                startrow+=2;
+            }
+            return startrow;
+        }
+
+
         private void printButton_Click(object sender, EventArgs e)
         {
             reoGridReport.Load(Directory.GetCurrentDirectory() + "\\Reports\\1.xlsx");
@@ -1949,381 +2134,42 @@ namespace WindowsFormsApp1
             var worksheet2 = reoGridReport2.CurrentWorksheet;
             comboBox2.SelectedIndex = 0;
             int startrow = 7;
+
             if (_selectedOrgID != 1)
             {
-                if ((dataGridView1.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView1.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView1.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView1.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView1.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView1.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView1.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView1.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView1.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
-                else
-                {
-                    startrow++;
-                }
-                startrow += 2;
-                if ((dataGridView2.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView2.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView2.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView2.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView2.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView2.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView2.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView2.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView2.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView2.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
-                else
-                {
-                    startrow++;
-                }
-                startrow += 2;
-                if ((dataGridView3.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView3.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView3.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView3.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView3.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView3.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView3.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView3.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = dataGridView3.Rows[i].Cells["VTpl"].Value.ToString();
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView3.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView3.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
+                startrow = UpdtateWorksheet(dataGridView1, worksheet1, startrow, 1);
+                startrow = UpdtateWorksheet(dataGridView1, worksheet1, startrow, 3);
+                startrow = UpdtateWorksheet(dataGridView2, worksheet1, startrow, 1);
+                startrow = UpdtateWorksheet(dataGridView2, worksheet1, startrow, 3);
+                startrow = UpdtateWorksheet(dataGridView3, worksheet1, startrow, 1);
+                startrow = UpdtateWorksheet(dataGridView3, worksheet1, startrow, 3);
             }
             else
             {
-                if ((dataGridView15.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView15.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView15.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView15.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView15.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView15.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView15.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView15.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView15.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView15.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
-                else
-                {
-                    startrow++;
-                }
+                startrow = UpdtateWorksheet(dataGridView15, worksheet1, startrow, 1);
                 startrow += 2;
-                if ((dataGridView16.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView16.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView16.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView16.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView16.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView16.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView16.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView16.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView16.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView16.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
-                else
-                {
-                    startrow++;
-                }
+                startrow = UpdtateWorksheet(dataGridView16, worksheet1, startrow, 1);
                 startrow += 2;
-                if ((dataGridView17.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView17.RowCount - 1; i++)
-                    {
-                        worksheet1["A" + (startrow + 1)] = Int32.Parse(dataGridView17.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet1["B" + (startrow + 1)] = String.IsNullOrWhiteSpace(dataGridView17.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView17.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet1["C" + (startrow + 1)] = dataGridView17.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet1["D" + (startrow + 1)] = DateTime.Parse(dataGridView17.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet1["E" + (startrow + 1)] = dataGridView17.Rows[i].Cells["ЕдИзмерМеропр"].Value.ToString();
-                        worksheet1["F" + (startrow + 1)] = dataGridView17.Rows[i].Cells["VTpl"].Value.ToString();
-                        worksheet1["G" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet1["H" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet1["I" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet1["J" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet1["K" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet1["L" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet1["M" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet1["N" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet1["O" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet1["P" + (startrow + 1)] = float.Parse(dataGridView17.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow++;
-                        if (i < dataGridView17.RowCount - 2)
-                            worksheet1.InsertRows(startrow, 1);
-                    }
-                }
-
+                startrow = UpdtateWorksheet(dataGridView17, worksheet1, startrow, 1);
             }
             comboBox2.SelectedIndex = 1;
             int startrow2 = 7;
             if (_selectedOrgID != 1)
             {
-                if ((dataGridView7.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView7.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView7.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView7.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView7.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView7.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView7.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView7.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView7.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
-                else
-                {
-                    startrow2++;
-                }
+                startrow2 = UpdtateWorksheet(dataGridView7, worksheet2, startrow2, 2);               
                 startrow2 += 2;
-                if ((dataGridView8.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView8.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView8.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView8.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView8.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView8.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView8.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView8.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView8.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
-                else
-                {
-                    startrow2++;
-                }
+                startrow2 = UpdtateWorksheet(dataGridView8, worksheet2, startrow2, 2);
                 startrow2 += 2;
-                if ((dataGridView9.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView9.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView9.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView9.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView9.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView9.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView9.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView9.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView9.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
+                startrow2 = UpdtateWorksheet(dataGridView9, worksheet2, startrow2, 2);
             }
             else
             {
-                if ((dataGridView18.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView18.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView18.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView18.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView18.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView18.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView18.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView18.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView18.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
-                else
-                {
-                    startrow2++;
-                }
+                startrow2 = UpdtateWorksheet(dataGridView18, worksheet2, startrow2, 2);
                 startrow2 += 2;
-                if ((dataGridView19.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView19.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView19.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView19.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView19.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView19.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView19.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView19.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView19.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
-                else
-                {
-                    startrow2++;
-                }
+                startrow2 = UpdtateWorksheet(dataGridView19, worksheet2, startrow2, 2);
                 startrow2 += 2;
-                if ((dataGridView20.RowCount - 1) >= 1)
-                {
-                    for (int i = 0; i < dataGridView20.RowCount - 1; i++)
-                    {
-                        worksheet2["A" + (startrow2 + 1)] = Int32.Parse(dataGridView20.Rows[i].Cells["КодОснНапр"].Value.ToString());
-                        worksheet2["B" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["НомерСтроки"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["НомерСтроки"].Value.ToString());
-                        worksheet2["C" + (startrow2 + 1)] = dataGridView20.Rows[i].Cells["Наименование"].Value.ToString();
-                        worksheet2["D" + (startrow2 + 1)] = DateTime.Parse(dataGridView20.Rows[i].Cells["Date_vndr"].Value.ToString()).ToString("dd.MM.yyyy");
-                        worksheet2["E" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["КодТэрДо"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["КодТэрДо"].Value.ToString());
-                        worksheet2["F" + (startrow2 + 1)] = String.IsNullOrWhiteSpace(dataGridView20.Rows[i].Cells["КодТэрПосле"].Value.ToString()) ? 0 : Int32.Parse(dataGridView20.Rows[i].Cells["КодТэрПосле"].Value.ToString());
-                        worksheet2["G" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["VTpl"].Value.ToString());
-                        worksheet2["H" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["VRub"].Value.ToString());
-                        worksheet2["I" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                        worksheet2["J" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["EkRub"].Value.ToString());
-                        worksheet2["K" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["fact"].Value.ToString());
-                        worksheet2["L" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrAll"].Value.ToString());
-                        worksheet2["M" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrIF"].Value.ToString());
-                        worksheet2["N" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                        worksheet2["O" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrRB"].Value.ToString());
-                        worksheet2["P" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrMB"].Value.ToString());
-                        worksheet2["Q" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                        worksheet2["R" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrKr"].Value.ToString());
-                        worksheet2["S" + (startrow2 + 1)] = float.Parse(dataGridView20.Rows[i].Cells["ZtrOther"].Value.ToString());
-                        startrow2++;
-                        if (i < dataGridView20.RowCount - 2)
-                            worksheet2.InsertRows(startrow2, 1);
-                    }
-                }
-
+                startrow2 = UpdtateWorksheet(dataGridView20, worksheet2, startrow2, 2);
             }
-
             var workbook = reoGridReport;
             //workbook.Worksheets[1] = worksheet;
             workbook.Worksheets[0].Name = "Приложение1";
@@ -2331,7 +2177,8 @@ namespace WindowsFormsApp1
             workbook.Worksheets[1].Name = "Приложение2";
             workbook.Save(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx", unvell.ReoGrid.IO.FileFormat.Excel2007);
             MessageBox.Show("Отчет " + Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx успешно сохранен.");
-            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Report_4e" + "_"  + "CompanyId_"+ _selectedOrgID + "_"+ DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
+            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
+
         }
     }
 }
