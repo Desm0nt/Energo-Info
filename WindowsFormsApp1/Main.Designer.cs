@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+namespace WindowsFormsApp1
 {
     partial class Main
     {
@@ -884,6 +884,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -894,6 +895,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView1.TabIndex = 1;
             // 
             // label4
@@ -942,7 +944,9 @@
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(6, 627);
             this.dataGridView6.Name = "dataGridView6";
+
             this.dataGridView6.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView6.TabIndex = 12;
             // 
             // label11
@@ -973,7 +977,9 @@
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(6, 330);
             this.dataGridView5.Name = "dataGridView5";
+
             this.dataGridView5.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView5.TabIndex = 9;
             // 
             // dataGridView4
@@ -986,7 +992,9 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(6, 33);
             this.dataGridView4.Name = "dataGridView4";
+
             this.dataGridView4.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView4.TabIndex = 8;
             // 
             // label13
@@ -1036,6 +1044,7 @@
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView9.Location = new System.Drawing.Point(6, 627);
             this.dataGridView9.Name = "dataGridView9";
+
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView9.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView9.Size = new System.Drawing.Size(1157, 268);
@@ -1071,9 +1080,11 @@
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView8.Location = new System.Drawing.Point(6, 330);
             this.dataGridView8.Name = "dataGridView8";
+
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView8.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView8.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView8.TabIndex = 16;
             this.dataGridView8.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
@@ -1088,9 +1099,11 @@
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Location = new System.Drawing.Point(6, 33);
             this.dataGridView7.Name = "dataGridView7";
+
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView7.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView7.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView7.TabIndex = 15;
             this.dataGridView7.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
@@ -1138,7 +1151,9 @@
             this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView12.Location = new System.Drawing.Point(6, 627);
             this.dataGridView12.Name = "dataGridView12";
+
             this.dataGridView12.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView12.TabIndex = 26;
             // 
             // label19
@@ -1167,7 +1182,9 @@
             this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView11.Location = new System.Drawing.Point(6, 330);
             this.dataGridView11.Name = "dataGridView11";
+
             this.dataGridView11.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView11.TabIndex = 23;
             // 
             // dataGridView10
@@ -1178,7 +1195,9 @@
             this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView10.Location = new System.Drawing.Point(6, 33);
             this.dataGridView10.Name = "dataGridView10";
+
             this.dataGridView10.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView10.TabIndex = 22;
             // 
             // label21
@@ -1229,9 +1248,11 @@
             this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView13.Location = new System.Drawing.Point(6, 626);
             this.dataGridView13.Name = "dataGridView13";
+
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView13.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView13.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView13.TabIndex = 33;
             // 
             // label27
@@ -1263,9 +1284,11 @@
             this.dataGridView14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView14.Location = new System.Drawing.Point(6, 330);
             this.dataGridView14.Name = "dataGridView14";
+
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView14.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView14.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView14.TabIndex = 30;
             // 
             // dataGridView23
@@ -1279,9 +1302,11 @@
             this.dataGridView23.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView23.Location = new System.Drawing.Point(6, 33);
             this.dataGridView23.Name = "dataGridView23";
+
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView23.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView23.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView23.TabIndex = 29;
             // 
             // label29
@@ -1331,9 +1356,11 @@
             this.dataGridView17.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView17.Location = new System.Drawing.Point(7, 626);
             this.dataGridView17.Name = "dataGridView17";
+
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView17.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView17.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView17.TabIndex = 12;
             // 
             // label31
@@ -1365,9 +1392,11 @@
             this.dataGridView16.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView16.Location = new System.Drawing.Point(7, 329);
             this.dataGridView16.Name = "dataGridView16";
+
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView16.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView16.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView16.TabIndex = 9;
             // 
             // dataGridView15
@@ -1381,9 +1410,11 @@
             this.dataGridView15.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView15.Location = new System.Drawing.Point(7, 32);
             this.dataGridView15.Name = "dataGridView15";
+
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView15.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView15.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView15.TabIndex = 8;
             // 
             // label33
@@ -1433,9 +1464,11 @@
             this.dataGridView20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView20.Location = new System.Drawing.Point(7, 626);
             this.dataGridView20.Name = "dataGridView20";
+
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView20.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView20.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView20.TabIndex = 26;
             // 
             // label35
@@ -1467,9 +1500,11 @@
             this.dataGridView19.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView19.Location = new System.Drawing.Point(7, 329);
             this.dataGridView19.Name = "dataGridView19";
+
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView19.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView19.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView19.TabIndex = 23;
             // 
             // dataGridView18
@@ -1483,9 +1518,11 @@
             this.dataGridView18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView18.Location = new System.Drawing.Point(7, 32);
             this.dataGridView18.Name = "dataGridView18";
+
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView18.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView18.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView18.TabIndex = 22;
             // 
             // label37
@@ -1536,9 +1573,11 @@
             this.dataGridView22.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView22.Location = new System.Drawing.Point(7, 626);
             this.dataGridView22.Name = "dataGridView22";
+
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView22.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView22.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView22.TabIndex = 40;
             // 
             // label39
@@ -1570,9 +1609,11 @@
             this.dataGridView21.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView21.Location = new System.Drawing.Point(7, 330);
             this.dataGridView21.Name = "dataGridView21";
+
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView21.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView21.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView21.TabIndex = 37;
             // 
             // dataGridView24
@@ -1586,9 +1627,11 @@
             this.dataGridView24.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView24.Location = new System.Drawing.Point(7, 33);
             this.dataGridView24.Name = "dataGridView24";
+
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView24.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView24.Size = new System.Drawing.Size(1157, 268);
+
             this.dataGridView24.TabIndex = 36;
             // 
             // label41
