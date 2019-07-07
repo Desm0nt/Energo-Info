@@ -155,8 +155,6 @@
             this.View9 = new System.Windows.Forms.TabPage();
             this.reoGridReport2 = new unvell.ReoGrid.ReoGridControl();
             this.reoGridReport = new unvell.ReoGrid.ReoGridControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView25 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.Panel1.SuspendLayout();
             this.splitContainerMain.Panel2.SuspendLayout();
@@ -219,8 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView24)).BeginInit();
             this.View9.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView25)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerMain
@@ -329,7 +325,6 @@
             this.tabControl1.Controls.Add(this.tabPageEditActivitiesPlan);
             this.tabControl1.Controls.Add(this.tabPageActivitiesPlan);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -838,6 +833,8 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -847,7 +844,7 @@
             this.dataGridView3.Name = "dataGridView3";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView3.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView3.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView3.TabIndex = 5;
             // 
             // label8
@@ -870,6 +867,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -879,11 +878,12 @@
             this.dataGridView2.Name = "dataGridView2";
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView2.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView2.TabIndex = 2;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -893,7 +893,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView1.TabIndex = 1;
             // 
             // label4
@@ -942,7 +942,7 @@
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(6, 627);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView6.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView6.TabIndex = 12;
             // 
             // label11
@@ -973,7 +973,7 @@
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(6, 330);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView5.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView5.TabIndex = 9;
             // 
             // dataGridView4
@@ -986,7 +986,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(6, 33);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView4.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView4.TabIndex = 8;
             // 
             // label13
@@ -1027,6 +1027,8 @@
             // 
             // dataGridView9
             // 
+            this.dataGridView9.AllowUserToAddRows = false;
+            this.dataGridView9.AllowUserToDeleteRows = false;
             this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1036,7 +1038,7 @@
             this.dataGridView9.Name = "dataGridView9";
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView9.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView9.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView9.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView9.TabIndex = 19;
             this.dataGridView9.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
@@ -1060,6 +1062,8 @@
             // 
             // dataGridView8
             // 
+            this.dataGridView8.AllowUserToAddRows = false;
+            this.dataGridView8.AllowUserToDeleteRows = false;
             this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1069,12 +1073,14 @@
             this.dataGridView8.Name = "dataGridView8";
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView8.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView8.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView8.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView8.TabIndex = 16;
             this.dataGridView8.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
             // dataGridView7
             // 
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
             this.dataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1084,7 +1090,7 @@
             this.dataGridView7.Name = "dataGridView7";
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView7.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView7.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView7.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView7.TabIndex = 15;
             this.dataGridView7.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
@@ -1132,7 +1138,7 @@
             this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView12.Location = new System.Drawing.Point(6, 627);
             this.dataGridView12.Name = "dataGridView12";
-            this.dataGridView12.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView12.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView12.TabIndex = 26;
             // 
             // label19
@@ -1161,7 +1167,7 @@
             this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView11.Location = new System.Drawing.Point(6, 330);
             this.dataGridView11.Name = "dataGridView11";
-            this.dataGridView11.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView11.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView11.TabIndex = 23;
             // 
             // dataGridView10
@@ -1172,7 +1178,7 @@
             this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView10.Location = new System.Drawing.Point(6, 33);
             this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(1105, 268);
+            this.dataGridView10.Size = new System.Drawing.Size(1071, 268);
             this.dataGridView10.TabIndex = 22;
             // 
             // label21
@@ -1214,6 +1220,8 @@
             // 
             // dataGridView13
             // 
+            this.dataGridView13.AllowUserToAddRows = false;
+            this.dataGridView13.AllowUserToDeleteRows = false;
             this.dataGridView13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView13.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1223,7 +1231,7 @@
             this.dataGridView13.Name = "dataGridView13";
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView13.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView13.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView13.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView13.TabIndex = 33;
             // 
             // label27
@@ -1246,6 +1254,8 @@
             // 
             // dataGridView14
             // 
+            this.dataGridView14.AllowUserToAddRows = false;
+            this.dataGridView14.AllowUserToDeleteRows = false;
             this.dataGridView14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView14.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1255,11 +1265,13 @@
             this.dataGridView14.Name = "dataGridView14";
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView14.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView14.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView14.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView14.TabIndex = 30;
             // 
             // dataGridView23
             // 
+            this.dataGridView23.AllowUserToAddRows = false;
+            this.dataGridView23.AllowUserToDeleteRows = false;
             this.dataGridView23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView23.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1269,7 +1281,7 @@
             this.dataGridView23.Name = "dataGridView23";
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView23.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView23.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView23.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView23.TabIndex = 29;
             // 
             // label29
@@ -1310,6 +1322,8 @@
             // 
             // dataGridView17
             // 
+            this.dataGridView17.AllowUserToAddRows = false;
+            this.dataGridView17.AllowUserToDeleteRows = false;
             this.dataGridView17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView17.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1319,7 +1333,7 @@
             this.dataGridView17.Name = "dataGridView17";
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView17.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView17.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView17.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView17.TabIndex = 12;
             // 
             // label31
@@ -1342,6 +1356,8 @@
             // 
             // dataGridView16
             // 
+            this.dataGridView16.AllowUserToAddRows = false;
+            this.dataGridView16.AllowUserToDeleteRows = false;
             this.dataGridView16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView16.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1351,11 +1367,13 @@
             this.dataGridView16.Name = "dataGridView16";
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView16.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView16.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView16.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView16.TabIndex = 9;
             // 
             // dataGridView15
             // 
+            this.dataGridView15.AllowUserToAddRows = false;
+            this.dataGridView15.AllowUserToDeleteRows = false;
             this.dataGridView15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView15.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1365,7 +1383,7 @@
             this.dataGridView15.Name = "dataGridView15";
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView15.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView15.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView15.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView15.TabIndex = 8;
             // 
             // label33
@@ -1406,6 +1424,8 @@
             // 
             // dataGridView20
             // 
+            this.dataGridView20.AllowUserToAddRows = false;
+            this.dataGridView20.AllowUserToDeleteRows = false;
             this.dataGridView20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView20.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1415,7 +1435,7 @@
             this.dataGridView20.Name = "dataGridView20";
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView20.RowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView20.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView20.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView20.TabIndex = 26;
             // 
             // label35
@@ -1438,6 +1458,8 @@
             // 
             // dataGridView19
             // 
+            this.dataGridView19.AllowUserToAddRows = false;
+            this.dataGridView19.AllowUserToDeleteRows = false;
             this.dataGridView19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView19.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1447,11 +1469,13 @@
             this.dataGridView19.Name = "dataGridView19";
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView19.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridView19.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView19.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView19.TabIndex = 23;
             // 
             // dataGridView18
             // 
+            this.dataGridView18.AllowUserToAddRows = false;
+            this.dataGridView18.AllowUserToDeleteRows = false;
             this.dataGridView18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView18.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1461,7 +1485,7 @@
             this.dataGridView18.Name = "dataGridView18";
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView18.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridView18.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView18.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView18.TabIndex = 22;
             // 
             // label37
@@ -1503,6 +1527,8 @@
             // 
             // dataGridView22
             // 
+            this.dataGridView22.AllowUserToAddRows = false;
+            this.dataGridView22.AllowUserToDeleteRows = false;
             this.dataGridView22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView22.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1512,7 +1538,7 @@
             this.dataGridView22.Name = "dataGridView22";
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView22.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridView22.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView22.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView22.TabIndex = 40;
             // 
             // label39
@@ -1535,6 +1561,8 @@
             // 
             // dataGridView21
             // 
+            this.dataGridView21.AllowUserToAddRows = false;
+            this.dataGridView21.AllowUserToDeleteRows = false;
             this.dataGridView21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView21.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1544,11 +1572,13 @@
             this.dataGridView21.Name = "dataGridView21";
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView21.RowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView21.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView21.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView21.TabIndex = 37;
             // 
             // dataGridView24
             // 
+            this.dataGridView24.AllowUserToAddRows = false;
+            this.dataGridView24.AllowUserToDeleteRows = false;
             this.dataGridView24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView24.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1558,7 +1588,7 @@
             this.dataGridView24.Name = "dataGridView24";
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView24.RowsDefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView24.Size = new System.Drawing.Size(1171, 268);
+            this.dataGridView24.Size = new System.Drawing.Size(1137, 268);
             this.dataGridView24.TabIndex = 36;
             // 
             // label41
@@ -1618,27 +1648,6 @@
             this.reoGridReport.Size = new System.Drawing.Size(1201, 177);
             this.reoGridReport.TabIndex = 2;
             this.reoGridReport.Text = "reoGridReport";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridView25);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1211, 581);
-            this.tabPage1.TabIndex = 11;
-            this.tabPage1.Text = "Test";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView25
-            // 
-            this.dataGridView25.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView25.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView25.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView25.Name = "dataGridView25";
-            this.dataGridView25.Size = new System.Drawing.Size(1205, 575);
-            this.dataGridView25.TabIndex = 0;
             // 
             // Main
             // 
@@ -1729,42 +1738,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView24)).EndInit();
             this.View9.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView25)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.SplitContainer splitContainerMain;
+        private System.Windows.Forms.ComboBox comboBoxEnterprises;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сменитьПользователяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem закрытьПрограммуToolStripMenuItem;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageEditActivitiesPlan;
         private System.Windows.Forms.SplitContainer splitContainerEditActivitiesPlan;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ComboBox SubsectionComboBoxEditActivitiesPlan;
+        private System.Windows.Forms.ComboBox SectionСomboBoxEditActivitiesPlan;
         private System.Windows.Forms.Label YearLabelEditActivitiesPlan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridViewEditActivitiesPlan;
         private System.Windows.Forms.TabPage tabPageActivitiesPlan;
         private System.Windows.Forms.SplitContainer splitContainerActivitiesPlan;
+        private System.Windows.Forms.Label labelTitleActivitiesPlan;
+        private System.Windows.Forms.RadioButton radioButtonPO;
+        private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.RadioButton radioButtonRUP;
         private System.Windows.Forms.Label YearLabelActivitiesPlan;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox SubsectionComboBoxEditActivitiesPlan;
-        private System.Windows.Forms.ComboBox SectionСomboBoxEditActivitiesPlan;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ComboBox comboBoxEnterprises;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SplitContainer splitContainerActivitiesPlanTables;
-        private System.Windows.Forms.DataGridView dataGridViewActivitiesPlan1;
-        private System.Windows.Forms.DataGridView dataGridViewActivitiesPlan2;
-        private System.Windows.Forms.Label labelHeader1;
-        private System.Windows.Forms.Label labelHeader2;
-        private System.Windows.Forms.RadioButton radioButtonPO;
-        private System.Windows.Forms.Label labelTitleActivitiesPlan;
         private System.Windows.Forms.ComboBox SectionСomboBoxActivitiesPlan;
-        private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.SplitContainer splitContainerActivitiesPlanTables;
+        private System.Windows.Forms.Label labelHeader1;
+        private System.Windows.Forms.DataGridView dataGridViewActivitiesPlan1;
+        private System.Windows.Forms.Label labelHeader2;
+        private System.Windows.Forms.DataGridView dataGridViewActivitiesPlan2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -1835,18 +1849,9 @@
         private System.Windows.Forms.DataGridView dataGridView21;
         private System.Windows.Forms.DataGridView dataGridView24;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сменитьПользователяToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem закрытьПрограммуToolStripMenuItem;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TabPage View9;
-        public unvell.ReoGrid.ReoGridControl reoGridReport;
-        private System.Windows.Forms.Button printButton;
         public unvell.ReoGrid.ReoGridControl reoGridReport2;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView25;
+        public unvell.ReoGrid.ReoGridControl reoGridReport;
     }
 }
 
