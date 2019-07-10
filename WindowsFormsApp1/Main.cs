@@ -1882,17 +1882,17 @@ namespace WindowsFormsApp1
                     row[col.ColumnName] = DateTime.Now;
                 }
             }
-            row["EkUslTpl"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkUslTpl)", "").ToString()) ? dt.Compute("Sum(EkUslTpl)", "") : 0;
-            row["EkRub"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkRub)", "").ToString()) ? dt.Compute("Sum(EkRub)", "") : 0;
-            row["ZtrAll"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrAll)", "").ToString()) ? dt.Compute("Sum(ZtrAll)", "") : 0;
-            row["ZtrIF"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIF)", "").ToString()) ? dt.Compute("Sum(ZtrIF)", "") : 0;
-            row["ZtrIFdr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIFdr)", "").ToString()) ? dt.Compute("Sum(ZtrIFdr)", "") : 0;
-            row["ZtrRB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrRB)", "").ToString()) ? dt.Compute("Sum(ZtrRB)", "") : 0;
-            row["ZtrMB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrMB)", "").ToString()) ? dt.Compute("Sum(ZtrMB)", "") : 0;
-            row["ZtrOrg"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOrg)", "").ToString()) ? dt.Compute("Sum(ZtrOrg)", "") : 0;
-            row["ZtrKr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrKr)", "").ToString()) ? dt.Compute("Sum(ZtrKr)", "") : 0;
-            row["ZtrOther"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOther)", "").ToString()) ? dt.Compute("Sum(ZtrOther)", "") : 0;
-            row["fact"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(fact)", "").ToString()) ? dt.Compute("Sum(fact)", "") : 0;
+            row["EkUslTpl"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkUslTpl)", string.Empty).ToString()) ? dt.Compute("Sum(EkUslTpl)", string.Empty) : 0;
+            row["EkRub"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(EkRub)", string.Empty).ToString()) ? dt.Compute("Sum(EkRub)", string.Empty) : 0;
+            row["ZtrAll"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrAll)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrAll)", string.Empty) : 0;
+            row["ZtrIF"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIF)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrIF)", string.Empty) : 0;
+            row["ZtrIFdr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrIFdr)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrIFdr)", string.Empty) : 0;
+            row["ZtrRB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrRB)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrRB)", string.Empty) : 0;
+            row["ZtrMB"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrMB)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrMB)", string.Empty) : 0;
+            row["ZtrOrg"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOrg)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrOrg)", string.Empty) : 0;
+            row["ZtrKr"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrKr)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrKr)", string.Empty) : 0;
+            row["ZtrOther"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(ZtrOther)", string.Empty).ToString()) ? dt.Compute("Sum(ZtrOther)", string.Empty) : 0;
+            row["fact"] = !String.IsNullOrWhiteSpace(dt.Compute("Sum(fact)", string.Empty).ToString()) ? dt.Compute("Sum(fact)", string.Empty) : 0;
             row["Наименование"] = "Итого";
             row["КодОснНапр"] = DBNull.Value;
             row["НомерСтроки"] = DBNull.Value;
@@ -2109,7 +2109,7 @@ namespace WindowsFormsApp1
             if (type == 3)
             {
                 int i = dataGridView.Rows.Count - 1;
-                worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
                 worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
                 worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
                 worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
@@ -2121,6 +2121,47 @@ namespace WindowsFormsApp1
                 worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
                 worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
                 startrow+=2;
+            }
+            if (type == 4)
+            {
+                dataGridView.Columns["КодОснНапр"].DisplayIndex = 0;
+                dataGridView.Columns["НомерСтроки"].DisplayIndex = 1;
+                dataGridView.Columns["Наименование"].DisplayIndex = 2;
+                dataGridView.Columns["Date_vndr"].DisplayIndex = 3;
+                dataGridView.Columns["КодТэрДо"].DisplayIndex = 4;
+                dataGridView.Columns["КодТэрПосле"].DisplayIndex = 5;
+                dataGridView.Columns["ЕдИзмерМеропр"].DisplayIndex = 6;
+                dataGridView.Columns["VTpl"].DisplayIndex = 7;
+                dataGridView.Columns["VRub"].DisplayIndex = 8;
+                dataGridView.Columns["EkUslTpl"].DisplayIndex = 9;
+                dataGridView.Columns["EkRub"].DisplayIndex = 10;
+                dataGridView.Columns["fact"].DisplayIndex = 11;
+                dataGridView.Columns["ZtrAll"].DisplayIndex = 12;
+                dataGridView.Columns["ZtrIF"].DisplayIndex = 13;
+                dataGridView.Columns["ZtrIFdr"].DisplayIndex = 14;
+                dataGridView.Columns["ZtrRB"].DisplayIndex = 15;
+                dataGridView.Columns["ZtrMB"].DisplayIndex = 16;
+                dataGridView.Columns["ZtrOrg"].DisplayIndex = 17;
+                dataGridView.Columns["ZtrKr"].DisplayIndex = 18;
+                dataGridView.Columns["ZtrOther"].DisplayIndex = 19;
+                int i = dataGridView.Rows.Count - 1;
+                //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                worksheet["E" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрДо"].Value.ToString();
+                worksheet["F" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрПосле"].Value.ToString();
+                worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VTpl"].Value.ToString());
+                worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VRub"].Value.ToString());
+                worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["fact"].Value.ToString());
+                worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                worksheet["Q" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                worksheet["R" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                worksheet["S" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                startrow += 2;
             }
             return startrow;
         }
@@ -2134,41 +2175,108 @@ namespace WindowsFormsApp1
             var worksheet2 = reoGridReport2.CurrentWorksheet;
             comboBox2.SelectedIndex = 0;
             int startrow = 7;
-
+            int step1 = 0;
+            int step2 = 0;
+            int step3 = 0;
             if (_selectedOrgID != 1)
             {
                 startrow = UpdtateWorksheet(dataGridView1, worksheet1, startrow, 1);
+                step1 = startrow;
                 startrow = UpdtateWorksheet(dataGridView1, worksheet1, startrow, 3);
                 startrow = UpdtateWorksheet(dataGridView2, worksheet1, startrow, 1);
+                step2 = startrow;
                 startrow = UpdtateWorksheet(dataGridView2, worksheet1, startrow, 3);
                 startrow = UpdtateWorksheet(dataGridView3, worksheet1, startrow, 1);
+                step3 = startrow;
                 startrow = UpdtateWorksheet(dataGridView3, worksheet1, startrow, 3);
+                worksheet1["G" + (startrow)] = "=G" + (step1 + 1) + "+G" + (step2 + 1) + "+G" + (step3 + 1);
+                worksheet1["H" + (startrow)] = "=H" + (step1 + 1) + "+H" + (step2 + 1) + "+H" + (step3 + 1);
+                worksheet1["I" + (startrow)] = "=I" + (step1 + 1) + "+I" + (step2 + 1) + "+I" + (step3 + 1);
+                worksheet1["J" + (startrow)] = "=J" + (step1 + 1) + "+J" + (step2 + 1) + "+J" + (step3 + 1);
+                worksheet1["K" + (startrow)] = "=K" + (step1 + 1) + "+K" + (step2 + 1) + "+K" + (step3 + 1);
+                worksheet1["L" + (startrow)] = "=L" + (step1 + 1) + "+L" + (step2 + 1) + "+L" + (step3 + 1);
+                worksheet1["M" + (startrow)] = "=M" + (step1 + 1) + "+M" + (step2 + 1) + "+M" + (step3 + 1);
+                worksheet1["N" + (startrow)] = "=N" + (step1 + 1) + "+N" + (step2 + 1) + "+N" + (step3 + 1);
+                worksheet1["O" + (startrow)] = "=O" + (step1 + 1) + "+O" + (step2 + 1) + "+O" + (step3 + 1);
+                worksheet1["P" + (startrow)] = "=P" + (step1 + 1) + "+P" + (step2 + 1) + "+P" + (step3 + 1);
+
             }
             else
             {
                 startrow = UpdtateWorksheet(dataGridView15, worksheet1, startrow, 1);
-                startrow += 2;
+                step1 = startrow;
+                startrow = UpdtateWorksheet(dataGridView15, worksheet1, startrow, 3);
                 startrow = UpdtateWorksheet(dataGridView16, worksheet1, startrow, 1);
-                startrow += 2;
+                step2 = startrow;
+                startrow = UpdtateWorksheet(dataGridView16, worksheet1, startrow, 3);
                 startrow = UpdtateWorksheet(dataGridView17, worksheet1, startrow, 1);
+                step3 = startrow;
+                startrow = UpdtateWorksheet(dataGridView17, worksheet1, startrow, 3);
+                worksheet1["G" + (startrow)] = "=G" + (step1 + 1) + "+G" + (step2 + 1) + "+G" + (step3 + 1);
+                worksheet1["H" + (startrow)] = "=H" + (step1 + 1) + "+H" + (step2 + 1) + "+H" + (step3 + 1);
+                worksheet1["I" + (startrow)] = "=I" + (step1 + 1) + "+I" + (step2 + 1) + "+I" + (step3 + 1);
+                worksheet1["J" + (startrow)] = "=J" + (step1 + 1) + "+J" + (step2 + 1) + "+J" + (step3 + 1);
+                worksheet1["K" + (startrow)] = "=K" + (step1 + 1) + "+K" + (step2 + 1) + "+K" + (step3 + 1);
+                worksheet1["L" + (startrow)] = "=L" + (step1 + 1) + "+L" + (step2 + 1) + "+L" + (step3 + 1);
+                worksheet1["M" + (startrow)] = "=M" + (step1 + 1) + "+M" + (step2 + 1) + "+M" + (step3 + 1);
+                worksheet1["N" + (startrow)] = "=N" + (step1 + 1) + "+N" + (step2 + 1) + "+N" + (step3 + 1);
+                worksheet1["O" + (startrow)] = "=O" + (step1 + 1) + "+O" + (step2 + 1) + "+O" + (step3 + 1);
+                worksheet1["P" + (startrow)] = "=P" + (step1 + 1) + "+P" + (step2 + 1) + "+P" + (step3 + 1);
             }
             comboBox2.SelectedIndex = 1;
             int startrow2 = 7;
+            step1 = 0;
+            step2 = 0;
+            step3 = 0;
             if (_selectedOrgID != 1)
             {
-                startrow2 = UpdtateWorksheet(dataGridView7, worksheet2, startrow2, 2);               
-                startrow2 += 2;
+                startrow2 = UpdtateWorksheet(dataGridView7, worksheet2, startrow2, 2);
+                step1 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView7, worksheet2, startrow2, 4);
                 startrow2 = UpdtateWorksheet(dataGridView8, worksheet2, startrow2, 2);
-                startrow2 += 2;
+                step2 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView8, worksheet2, startrow2, 4);
                 startrow2 = UpdtateWorksheet(dataGridView9, worksheet2, startrow2, 2);
+                step3 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView9, worksheet2, startrow2, 4);
+                worksheet2["G" + startrow2] = "=G" + (step1 + 1) + "+G" + (step2 + 1) + "+G" + (step3 + 1);
+                worksheet2["H" + startrow2] = "=H" + (step1 + 1) + "+H" + (step2 + 1) + "+H" + (step3 + 1);
+                worksheet2["I" + startrow2] = "=I" + (step1 + 1) + "+I" + (step2 + 1) + "+I" + (step3 + 1);
+                worksheet2["J" + startrow2] = "=J" + (step1 + 1) + "+J" + (step2 + 1) + "+J" + (step3 + 1);
+                worksheet2["K" + startrow2] = "=K" + (step1 + 1) + "+K" + (step2 + 1) + "+K" + (step3 + 1);
+                worksheet2["L" + startrow2] = "=L" + (step1 + 1) + "+L" + (step2 + 1) + "+L" + (step3 + 1);
+                worksheet2["M" + startrow2] = "=M" + (step1 + 1) + "+M" + (step2 + 1) + "+M" + (step3 + 1);
+                worksheet2["N" + startrow2] = "=N" + (step1 + 1) + "+N" + (step2 + 1) + "+N" + (step3 + 1);
+                worksheet2["O" + startrow2] = "=O" + (step1 + 1) + "+O" + (step2 + 1) + "+O" + (step3 + 1);
+                worksheet2["P" + startrow2] = "=P" + (step1 + 1) + "+P" + (step2 + 1) + "+P" + (step3 + 1);
+                worksheet2["Q" + startrow2] = "=Q" + (step1 + 1) + "+Q" + (step2 + 1) + "+Q" + (step3 + 1);
+                worksheet2["R" + startrow2] = "=R" + (step1 + 1) + "+R" + (step2 + 1) + "+R" + (step3 + 1);
+                worksheet2["S" + startrow2] = "=S" + (step1 + 1) + "+S" + (step2 + 1) + "+S" + (step3 + 1);
             }
             else
             {
                 startrow2 = UpdtateWorksheet(dataGridView18, worksheet2, startrow2, 2);
-                startrow2 += 2;
+                step1 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView18, worksheet2, startrow2, 4);
                 startrow2 = UpdtateWorksheet(dataGridView19, worksheet2, startrow2, 2);
-                startrow2 += 2;
+                step2 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView19, worksheet2, startrow2, 4);
                 startrow2 = UpdtateWorksheet(dataGridView20, worksheet2, startrow2, 2);
+                step3 = startrow2;
+                startrow2 = UpdtateWorksheet(dataGridView20, worksheet2, startrow2, 4);
+                worksheet2["G" + startrow2] = "=G" + (step1 + 1) + "+G" + (step2 + 1) + "+G" + (step3 + 1);
+                worksheet2["H" + startrow2] = "=H" + (step1 + 1) + "+H" + (step2 + 1) + "+H" + (step3 + 1);
+                worksheet2["I" + startrow2] = "=I" + (step1 + 1) + "+I" + (step2 + 1) + "+I" + (step3 + 1);
+                worksheet2["J" + startrow2] = "=J" + (step1 + 1) + "+J" + (step2 + 1) + "+J" + (step3 + 1);
+                worksheet2["K" + startrow2] = "=K" + (step1 + 1) + "+K" + (step2 + 1) + "+K" + (step3 + 1);
+                worksheet2["L" + startrow2] = "=L" + (step1 + 1) + "+L" + (step2 + 1) + "+L" + (step3 + 1);
+                worksheet2["M" + startrow2] = "=M" + (step1 + 1) + "+M" + (step2 + 1) + "+M" + (step3 + 1);
+                worksheet2["N" + startrow2] = "=N" + (step1 + 1) + "+N" + (step2 + 1) + "+N" + (step3 + 1);
+                worksheet2["O" + startrow2] = "=O" + (step1 + 1) + "+O" + (step2 + 1) + "+O" + (step3 + 1);
+                worksheet2["P" + startrow2] = "=P" + (step1 + 1) + "+P" + (step2 + 1) + "+P" + (step3 + 1);
+                worksheet2["Q" + startrow2] = "=Q" + (step1 + 1) + "+Q" + (step2 + 1) + "+Q" + (step3 + 1);
+                worksheet2["R" + startrow2] = "=R" + (step1 + 1) + "+R" + (step2 + 1) + "+R" + (step3 + 1);
+                worksheet2["S" + startrow2] = "=S" + (step1 + 1) + "+S" + (step2 + 1) + "+S" + (step3 + 1);
             }
             var workbook = reoGridReport;
             //workbook.Worksheets[1] = worksheet;
