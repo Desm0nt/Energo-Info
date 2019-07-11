@@ -59,6 +59,12 @@
     <Compile Include="ActivitiesPlanHelpers\EditActivitiesPlan.Designer.cs">
       <DependentUpon>EditActivitiesPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivitiesPlanHelpers\FormInfoForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivitiesPlanHelpers\FormInfoForAdmin.Designer.cs">
+      <DependentUpon>FormInfoForAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActivitiesPlanHelpers\SaveReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="ActivitiesPlanHelpers\EditActivitiesPlan.resx">
       <DependentUpon>EditActivitiesPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivitiesPlanHelpers\FormInfoForAdmin.resx">
+      <DependentUpon>FormInfoForAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActivitiesPlanHelpers\SaveReport.resx">
       <DependentUpon>SaveReport.cs</DependentUpon>

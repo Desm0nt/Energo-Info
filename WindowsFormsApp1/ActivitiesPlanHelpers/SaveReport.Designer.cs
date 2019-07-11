@@ -96,7 +96,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SaveReport";
             this.Text = "Сохранение отчета";
-            this.Load += new System.EventHandler(this.SaveReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

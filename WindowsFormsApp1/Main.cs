@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             comboBoxEnterprises.DisplayMember = sourceEnterprises.Columns[1].ToString();
             comboBoxEnterprises.SelectedValue = _selectedOrgID;
         }
-         
+
         private void StartInit()
         {
             try
@@ -384,6 +384,38 @@ namespace WindowsFormsApp1
             //}
         }
 
+        /// <summary>
+        /// Просмотр подробностей для администратора по итоговым суммам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewActivitiesPlan2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (UserRole == 1 && e.RowIndex == 0)
+            {
+                if(SectionСomboBoxActivitiesPlan.SelectedIndex==0)
+                    new FormInfoForAdmin().Show();
+                if (SectionСomboBoxActivitiesPlan.SelectedIndex == 1)
+                    new FormInfoForAdmin().Show();
+                //int Section = SectionСomboBoxActivitiesPlan.SelectedIndex + 1;
+                //int SubSection;
+                //if (SubsectionComboBoxEditActivitiesPlan.SelectedIndex == 1)
+                //    SubSection = 3;
+                //else SubSection = 1;
+                //if (SubsectionComboBoxEditActivitiesPlan.SelectedIndex != 1)
+                //{
+                //    int id = Convert.ToInt32(dataGridViewEditActivitiesPlan.Rows[e.RowIndex].Cells["ID"].Value);
+
+
+                //    new EditActivitiesPlan((SectionСomboBoxEditActivitiesPlan.SelectedIndex == 1) ? true : false, _year, Convert.ToInt32(comboBoxEnterprises.SelectedValue), Section, SubSection, dataGridViewEditActivitiesPlan.Rows[e.RowIndex]).Show();
+                //}
+                //else
+                //{
+                //    new SetupActivitiesGroup(dataGridViewEditActivitiesPlan.Rows[e.RowIndex], _year, SectionСomboBoxEditActivitiesPlan.SelectedIndex + 1).Show();
+                //}
+            }
+        }
+
         #endregion
 
         public static void DenySorted(DataGridView datagrid)
@@ -478,9 +510,13 @@ namespace WindowsFormsApp1
             if (tabControl1.SelectedIndex == 1 && (SectionСomboBoxActivitiesPlan.SelectedIndex == 0 || SectionСomboBoxActivitiesPlan.SelectedIndex == 1))
             {
                 var idOrg = Convert.ToInt32(comboBoxEnterprises.SelectedValue);
+
                 var source1 = new dbActivitiesPlan().GetTable(1, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
                 var source2 = new dbActivitiesPlan().GetTable(2, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
-                new SaveReport(SectionСomboBoxActivitiesPlan.SelectedIndex + 1, _year, comboBoxEnterprises.Text, source1, source2).Show();
+
+                //var source1 = new dbActivitiesPlan().GetTable(1, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
+                //var source2 = new dbActivitiesPlan().GetTable(2, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
+                new SaveReport(SectionСomboBoxActivitiesPlan.SelectedIndex + 1, _year, comboBoxEnterprises.Text, source1, source2);
             }
         }
 
@@ -2288,5 +2324,7 @@ namespace WindowsFormsApp1
             System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\Report_4e" + "_" + "CompanyId_" + _selectedOrgID + "_" + DateTime.Today.ToString("yyyy") + "_" + DateTime.Today.ToString("MMMM") + ".xlsx");
 
         }
+
+
     }
 }
