@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
             this.label42 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -224,7 +224,7 @@
             this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerMain.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerMain.Name = "splitContainerMain";
             this.splitContainerMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -239,26 +239,25 @@
             // splitContainerMain.Panel2
             // 
             this.splitContainerMain.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainerMain.Size = new System.Drawing.Size(1625, 788);
+            this.splitContainerMain.Size = new System.Drawing.Size(1219, 640);
             this.splitContainerMain.SplitterDistance = 30;
+            this.splitContainerMain.SplitterWidth = 3;
             this.splitContainerMain.TabIndex = 2;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(100, 11);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Location = new System.Drawing.Point(75, 9);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(115, 17);
+            this.label42.Size = new System.Drawing.Size(88, 13);
             this.label42.TabIndex = 23;
             this.label42.Text = "Выбор периода:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(225, 7);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(169, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 22;
             this.dateTimePicker1.CloseUp += new System.EventHandler(this.dateTimePicker1_CloseUp);
             this.dateTimePicker1.DropDown += new System.EventHandler(this.dateTimePicker1_DropDown);
@@ -267,19 +266,20 @@
             // 
             this.comboBoxEnterprises.DisplayMember = "0";
             this.comboBoxEnterprises.FormattingEnabled = true;
-            this.comboBoxEnterprises.Location = new System.Drawing.Point(613, 6);
-            this.comboBoxEnterprises.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxEnterprises.Location = new System.Drawing.Point(460, 5);
+            this.comboBoxEnterprises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxEnterprises.Name = "comboBoxEnterprises";
-            this.comboBoxEnterprises.Size = new System.Drawing.Size(312, 24);
+            this.comboBoxEnterprises.Size = new System.Drawing.Size(235, 21);
             this.comboBoxEnterprises.TabIndex = 20;
             this.comboBoxEnterprises.SelectedIndexChanged += new System.EventHandler(this.comboBoxEnterprises_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(509, 10);
+            this.label1.Location = new System.Drawing.Point(382, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 17);
+            this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "Предприятие:";
             // 
@@ -291,10 +291,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.менюToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(7, 5);
+            this.menuStrip1.Location = new System.Drawing.Point(5, 4);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1613, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1210, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -304,20 +304,20 @@
             this.сменитьПользователяToolStripMenuItem,
             this.закрытьПрограммуToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(63, 26);
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
             // сменитьПользователяToolStripMenuItem
             // 
             this.сменитьПользователяToolStripMenuItem.Name = "сменитьПользователяToolStripMenuItem";
-            this.сменитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.сменитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.сменитьПользователяToolStripMenuItem.Text = "Сменить пользователя";
             this.сменитьПользователяToolStripMenuItem.Click += new System.EventHandler(this.сменитьПользователяToolStripMenuItem_Click);
             // 
             // закрытьПрограммуToolStripMenuItem
             // 
             this.закрытьПрограммуToolStripMenuItem.Name = "закрытьПрограммуToolStripMenuItem";
-            this.закрытьПрограммуToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.закрытьПрограммуToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.закрытьПрограммуToolStripMenuItem.Text = "Закрыть программу";
             this.закрытьПрограммуToolStripMenuItem.Click += new System.EventHandler(this.закрытьПрограммуToolStripMenuItem_Click);
             // 
@@ -328,10 +328,9 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1625, 754);
+            this.tabControl1.Size = new System.Drawing.Size(1219, 607);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -339,11 +338,11 @@
             // tabPageEditActivitiesPlan
             // 
             this.tabPageEditActivitiesPlan.Controls.Add(this.splitContainerEditActivitiesPlan);
-            this.tabPageEditActivitiesPlan.Location = new System.Drawing.Point(4, 25);
-            this.tabPageEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageEditActivitiesPlan.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageEditActivitiesPlan.Name = "tabPageEditActivitiesPlan";
-            this.tabPageEditActivitiesPlan.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageEditActivitiesPlan.Size = new System.Drawing.Size(1617, 725);
+            this.tabPageEditActivitiesPlan.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageEditActivitiesPlan.Size = new System.Drawing.Size(1211, 581);
             this.tabPageEditActivitiesPlan.TabIndex = 6;
             this.tabPageEditActivitiesPlan.Text = "Ввод наименований мероприятий";
             this.tabPageEditActivitiesPlan.UseVisualStyleBackColor = true;
@@ -353,8 +352,8 @@
             this.splitContainerEditActivitiesPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerEditActivitiesPlan.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerEditActivitiesPlan.IsSplitterFixed = true;
-            this.splitContainerEditActivitiesPlan.Location = new System.Drawing.Point(3, 2);
-            this.splitContainerEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerEditActivitiesPlan.Location = new System.Drawing.Point(2, 2);
+            this.splitContainerEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerEditActivitiesPlan.Name = "splitContainerEditActivitiesPlan";
             this.splitContainerEditActivitiesPlan.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -371,18 +370,17 @@
             // splitContainerEditActivitiesPlan.Panel2
             // 
             this.splitContainerEditActivitiesPlan.Panel2.Controls.Add(this.dataGridViewEditActivitiesPlan);
-            this.splitContainerEditActivitiesPlan.Panel2.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.splitContainerEditActivitiesPlan.Size = new System.Drawing.Size(1611, 721);
+            this.splitContainerEditActivitiesPlan.Panel2.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.splitContainerEditActivitiesPlan.Size = new System.Drawing.Size(1207, 577);
             this.splitContainerEditActivitiesPlan.SplitterDistance = 90;
-            this.splitContainerEditActivitiesPlan.SplitterWidth = 5;
             this.splitContainerEditActivitiesPlan.TabIndex = 14;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(899, 17);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAdd.Location = new System.Drawing.Point(674, 14);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(155, 28);
+            this.buttonAdd.Size = new System.Drawing.Size(116, 23);
             this.buttonAdd.TabIndex = 18;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -394,10 +392,10 @@
             this.SubsectionComboBoxEditActivitiesPlan.Items.AddRange(new object[] {
             "Мероприятия по подразделениям",
             "Формирование свода мероприятий"});
-            this.SubsectionComboBoxEditActivitiesPlan.Location = new System.Drawing.Point(595, 20);
-            this.SubsectionComboBoxEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubsectionComboBoxEditActivitiesPlan.Location = new System.Drawing.Point(446, 16);
+            this.SubsectionComboBoxEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SubsectionComboBoxEditActivitiesPlan.Name = "SubsectionComboBoxEditActivitiesPlan";
-            this.SubsectionComboBoxEditActivitiesPlan.Size = new System.Drawing.Size(283, 24);
+            this.SubsectionComboBoxEditActivitiesPlan.Size = new System.Drawing.Size(213, 21);
             this.SubsectionComboBoxEditActivitiesPlan.TabIndex = 16;
             this.SubsectionComboBoxEditActivitiesPlan.SelectedIndexChanged += new System.EventHandler(this.SubsectionComboBoxEditActivitiesPlan_SelectedIndexChanged);
             // 
@@ -407,37 +405,40 @@
             this.SectionСomboBoxEditActivitiesPlan.Items.AddRange(new object[] {
             "Мероприятия по энергосбережению",
             "Мероприятия по увеличению МВТ"});
-            this.SectionСomboBoxEditActivitiesPlan.Location = new System.Drawing.Point(152, 18);
-            this.SectionСomboBoxEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SectionСomboBoxEditActivitiesPlan.Location = new System.Drawing.Point(114, 15);
+            this.SectionСomboBoxEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SectionСomboBoxEditActivitiesPlan.Name = "SectionСomboBoxEditActivitiesPlan";
-            this.SectionСomboBoxEditActivitiesPlan.Size = new System.Drawing.Size(312, 24);
+            this.SectionСomboBoxEditActivitiesPlan.Size = new System.Drawing.Size(235, 21);
             this.SectionСomboBoxEditActivitiesPlan.TabIndex = 15;
             this.SectionСomboBoxEditActivitiesPlan.SelectedIndexChanged += new System.EventHandler(this.SectionСomboBoxEditActivitiesPlan_SelectedIndexChanged);
             // 
             // YearLabelEditActivitiesPlan
             // 
             this.YearLabelEditActivitiesPlan.AutoSize = true;
-            this.YearLabelEditActivitiesPlan.Location = new System.Drawing.Point(11, 23);
+            this.YearLabelEditActivitiesPlan.Location = new System.Drawing.Point(8, 19);
+            this.YearLabelEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.YearLabelEditActivitiesPlan.Name = "YearLabelEditActivitiesPlan";
-            this.YearLabelEditActivitiesPlan.Size = new System.Drawing.Size(36, 17);
+            this.YearLabelEditActivitiesPlan.Size = new System.Drawing.Size(28, 13);
             this.YearLabelEditActivitiesPlan.TabIndex = 9;
             this.YearLabelEditActivitiesPlan.Text = "Год:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(85, 23);
+            this.label5.Location = new System.Drawing.Point(64, 19);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Раздел:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(500, 22);
+            this.label6.Location = new System.Drawing.Point(375, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 17);
+            this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Подраздел: ";
             // 
@@ -448,8 +449,8 @@
             this.dataGridViewEditActivitiesPlan.AllowUserToResizeRows = false;
             this.dataGridViewEditActivitiesPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEditActivitiesPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewEditActivitiesPlan.Location = new System.Drawing.Point(11, 10);
-            this.dataGridViewEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.dataGridViewEditActivitiesPlan.Location = new System.Drawing.Point(8, 8);
+            this.dataGridViewEditActivitiesPlan.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.dataGridViewEditActivitiesPlan.MultiSelect = false;
             this.dataGridViewEditActivitiesPlan.Name = "dataGridViewEditActivitiesPlan";
             this.dataGridViewEditActivitiesPlan.ReadOnly = true;
@@ -457,17 +458,17 @@
             this.dataGridViewEditActivitiesPlan.RowHeadersVisible = false;
             this.dataGridViewEditActivitiesPlan.RowTemplate.Height = 24;
             this.dataGridViewEditActivitiesPlan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEditActivitiesPlan.Size = new System.Drawing.Size(1589, 606);
+            this.dataGridViewEditActivitiesPlan.Size = new System.Drawing.Size(1191, 467);
             this.dataGridViewEditActivitiesPlan.TabIndex = 13;
             this.dataGridViewEditActivitiesPlan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEditActivitiesPlan_CellDoubleClick);
             // 
             // tabPageActivitiesPlan
             // 
             this.tabPageActivitiesPlan.Controls.Add(this.splitContainerActivitiesPlan);
-            this.tabPageActivitiesPlan.Location = new System.Drawing.Point(4, 25);
-            this.tabPageActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageActivitiesPlan.Location = new System.Drawing.Point(4, 22);
+            this.tabPageActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageActivitiesPlan.Name = "tabPageActivitiesPlan";
-            this.tabPageActivitiesPlan.Size = new System.Drawing.Size(1617, 725);
+            this.tabPageActivitiesPlan.Size = new System.Drawing.Size(1211, 581);
             this.tabPageActivitiesPlan.TabIndex = 7;
             this.tabPageActivitiesPlan.Text = "Программа мероприятий";
             this.tabPageActivitiesPlan.UseVisualStyleBackColor = true;
@@ -478,7 +479,7 @@
             this.splitContainerActivitiesPlan.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerActivitiesPlan.IsSplitterFixed = true;
             this.splitContainerActivitiesPlan.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerActivitiesPlan.Name = "splitContainerActivitiesPlan";
             this.splitContainerActivitiesPlan.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -495,9 +496,10 @@
             // splitContainerActivitiesPlan.Panel2
             // 
             this.splitContainerActivitiesPlan.Panel2.Controls.Add(this.splitContainerActivitiesPlanTables);
-            this.splitContainerActivitiesPlan.Panel2.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.splitContainerActivitiesPlan.Size = new System.Drawing.Size(1617, 725);
+            this.splitContainerActivitiesPlan.Panel2.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.splitContainerActivitiesPlan.Size = new System.Drawing.Size(1211, 581);
             this.splitContainerActivitiesPlan.SplitterDistance = 75;
+            this.splitContainerActivitiesPlan.SplitterWidth = 3;
             this.splitContainerActivitiesPlan.TabIndex = 15;
             // 
             // labelTitleActivitiesPlan
@@ -505,10 +507,11 @@
             this.labelTitleActivitiesPlan.AutoSize = true;
             this.labelTitleActivitiesPlan.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTitleActivitiesPlan.ForeColor = System.Drawing.Color.Blue;
-            this.labelTitleActivitiesPlan.Location = new System.Drawing.Point(11, 50);
-            this.labelTitleActivitiesPlan.MaximumSize = new System.Drawing.Size(1051, 0);
+            this.labelTitleActivitiesPlan.Location = new System.Drawing.Point(8, 41);
+            this.labelTitleActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTitleActivitiesPlan.MaximumSize = new System.Drawing.Size(788, 0);
             this.labelTitleActivitiesPlan.Name = "labelTitleActivitiesPlan";
-            this.labelTitleActivitiesPlan.Size = new System.Drawing.Size(988, 38);
+            this.labelTitleActivitiesPlan.Size = new System.Drawing.Size(707, 34);
             this.labelTitleActivitiesPlan.TabIndex = 13;
             this.labelTitleActivitiesPlan.Text = "Перечень мероприятий по увеличению использования МВТ, отходов производства, ВЭР, " +
     "нетрадиционных и возобновляемых энергоресурсов (поквартальный по подразделениям)" +
@@ -518,11 +521,11 @@
             // 
             this.radioButtonPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonPO.AutoSize = true;
-            this.radioButtonPO.Location = new System.Drawing.Point(1156, 22);
-            this.radioButtonPO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonPO.Location = new System.Drawing.Point(596, 17);
+            this.radioButtonPO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonPO.Name = "radioButtonPO";
             this.radioButtonPO.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButtonPO.Size = new System.Drawing.Size(171, 21);
+            this.radioButtonPO.Size = new System.Drawing.Size(135, 17);
             this.radioButtonPO.TabIndex = 12;
             this.radioButtonPO.TabStop = true;
             this.radioButtonPO.Text = "Суммирование по ПО";
@@ -531,10 +534,10 @@
             // 
             // buttonPrint
             // 
-            this.buttonPrint.Location = new System.Drawing.Point(448, 17);
-            this.buttonPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPrint.Location = new System.Drawing.Point(336, 14);
+            this.buttonPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(97, 28);
+            this.buttonPrint.Size = new System.Drawing.Size(73, 23);
             this.buttonPrint.TabIndex = 19;
             this.buttonPrint.Text = "Печать";
             this.buttonPrint.UseVisualStyleBackColor = true;
@@ -545,10 +548,10 @@
             this.radioButtonRUP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonRUP.AutoSize = true;
             this.radioButtonRUP.Checked = true;
-            this.radioButtonRUP.Location = new System.Drawing.Point(956, 22);
-            this.radioButtonRUP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonRUP.Location = new System.Drawing.Point(444, 17);
+            this.radioButtonRUP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonRUP.Name = "radioButtonRUP";
-            this.radioButtonRUP.Size = new System.Drawing.Size(178, 21);
+            this.radioButtonRUP.Size = new System.Drawing.Size(142, 17);
             this.radioButtonRUP.TabIndex = 11;
             this.radioButtonRUP.TabStop = true;
             this.radioButtonRUP.Text = "Суммирование по РУП";
@@ -558,18 +561,20 @@
             // YearLabelActivitiesPlan
             // 
             this.YearLabelActivitiesPlan.AutoSize = true;
-            this.YearLabelActivitiesPlan.Location = new System.Drawing.Point(11, 23);
+            this.YearLabelActivitiesPlan.Location = new System.Drawing.Point(8, 19);
+            this.YearLabelActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.YearLabelActivitiesPlan.Name = "YearLabelActivitiesPlan";
-            this.YearLabelActivitiesPlan.Size = new System.Drawing.Size(36, 17);
+            this.YearLabelActivitiesPlan.Size = new System.Drawing.Size(28, 13);
             this.YearLabelActivitiesPlan.TabIndex = 9;
             this.YearLabelActivitiesPlan.Text = "Год:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(85, 23);
+            this.label7.Location = new System.Drawing.Point(64, 19);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Раздел:";
             // 
@@ -579,10 +584,10 @@
             this.SectionСomboBoxActivitiesPlan.Items.AddRange(new object[] {
             "Мероприятия по энергосбережению",
             "Мероприятия по увеличению МВТ"});
-            this.SectionСomboBoxActivitiesPlan.Location = new System.Drawing.Point(152, 20);
-            this.SectionСomboBoxActivitiesPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SectionСomboBoxActivitiesPlan.Location = new System.Drawing.Point(114, 16);
+            this.SectionСomboBoxActivitiesPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SectionСomboBoxActivitiesPlan.Name = "SectionСomboBoxActivitiesPlan";
-            this.SectionСomboBoxActivitiesPlan.Size = new System.Drawing.Size(251, 24);
+            this.SectionСomboBoxActivitiesPlan.Size = new System.Drawing.Size(189, 21);
             this.SectionСomboBoxActivitiesPlan.TabIndex = 14;
             this.SectionСomboBoxActivitiesPlan.SelectedIndexChanged += new System.EventHandler(this.SectionСomboBoxActivitiesPlan_SelectedIndexChanged);
             // 
@@ -591,8 +596,8 @@
             this.splitContainerActivitiesPlanTables.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainerActivitiesPlanTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerActivitiesPlanTables.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainerActivitiesPlanTables.Location = new System.Drawing.Point(11, 10);
-            this.splitContainerActivitiesPlanTables.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerActivitiesPlanTables.Location = new System.Drawing.Point(8, 8);
+            this.splitContainerActivitiesPlanTables.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerActivitiesPlanTables.Name = "splitContainerActivitiesPlanTables";
             this.splitContainerActivitiesPlanTables.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -600,16 +605,15 @@
             // 
             this.splitContainerActivitiesPlanTables.Panel1.Controls.Add(this.labelHeader1);
             this.splitContainerActivitiesPlanTables.Panel1.Controls.Add(this.dataGridViewActivitiesPlan1);
-            this.splitContainerActivitiesPlanTables.Panel1.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
+            this.splitContainerActivitiesPlanTables.Panel1.Padding = new System.Windows.Forms.Padding(0, 41, 0, 0);
             // 
             // splitContainerActivitiesPlanTables.Panel2
             // 
             this.splitContainerActivitiesPlanTables.Panel2.Controls.Add(this.labelHeader2);
             this.splitContainerActivitiesPlanTables.Panel2.Controls.Add(this.dataGridViewActivitiesPlan2);
-            this.splitContainerActivitiesPlanTables.Panel2.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
-            this.splitContainerActivitiesPlanTables.Size = new System.Drawing.Size(1595, 626);
-            this.splitContainerActivitiesPlanTables.SplitterDistance = 504;
-            this.splitContainerActivitiesPlanTables.SplitterWidth = 5;
+            this.splitContainerActivitiesPlanTables.Panel2.Padding = new System.Windows.Forms.Padding(0, 41, 0, 0);
+            this.splitContainerActivitiesPlanTables.Size = new System.Drawing.Size(1195, 487);
+            this.splitContainerActivitiesPlanTables.SplitterDistance = 365;
             this.splitContainerActivitiesPlanTables.TabIndex = 13;
             // 
             // labelHeader1
@@ -617,9 +621,10 @@
             this.labelHeader1.AutoSize = true;
             this.labelHeader1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHeader1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelHeader1.Location = new System.Drawing.Point(51, 15);
+            this.labelHeader1.Location = new System.Drawing.Point(38, 12);
+            this.labelHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHeader1.Name = "labelHeader1";
-            this.labelHeader1.Size = new System.Drawing.Size(19, 20);
+            this.labelHeader1.Size = new System.Drawing.Size(17, 17);
             this.labelHeader1.TabIndex = 14;
             this.labelHeader1.Text = "1";
             // 
@@ -630,8 +635,8 @@
             this.dataGridViewActivitiesPlan1.AllowUserToResizeRows = false;
             this.dataGridViewActivitiesPlan1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewActivitiesPlan1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewActivitiesPlan1.Location = new System.Drawing.Point(0, 50);
-            this.dataGridViewActivitiesPlan1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dataGridViewActivitiesPlan1.Location = new System.Drawing.Point(0, 41);
+            this.dataGridViewActivitiesPlan1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.dataGridViewActivitiesPlan1.MultiSelect = false;
             this.dataGridViewActivitiesPlan1.Name = "dataGridViewActivitiesPlan1";
             this.dataGridViewActivitiesPlan1.ReadOnly = true;
@@ -639,7 +644,7 @@
             this.dataGridViewActivitiesPlan1.RowHeadersVisible = false;
             this.dataGridViewActivitiesPlan1.RowTemplate.Height = 24;
             this.dataGridViewActivitiesPlan1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewActivitiesPlan1.Size = new System.Drawing.Size(1593, 452);
+            this.dataGridViewActivitiesPlan1.Size = new System.Drawing.Size(1193, 322);
             this.dataGridViewActivitiesPlan1.TabIndex = 13;
             this.dataGridViewActivitiesPlan1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActivitiesPlan1_CellDoubleClick);
             // 
@@ -648,9 +653,10 @@
             this.labelHeader2.AutoSize = true;
             this.labelHeader2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHeader2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelHeader2.Location = new System.Drawing.Point(51, 15);
+            this.labelHeader2.Location = new System.Drawing.Point(38, 12);
+            this.labelHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHeader2.Name = "labelHeader2";
-            this.labelHeader2.Size = new System.Drawing.Size(19, 20);
+            this.labelHeader2.Size = new System.Drawing.Size(17, 17);
             this.labelHeader2.TabIndex = 15;
             this.labelHeader2.Text = "2";
             // 
@@ -661,8 +667,8 @@
             this.dataGridViewActivitiesPlan2.AllowUserToResizeRows = false;
             this.dataGridViewActivitiesPlan2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewActivitiesPlan2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewActivitiesPlan2.Location = new System.Drawing.Point(0, 50);
-            this.dataGridViewActivitiesPlan2.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dataGridViewActivitiesPlan2.Location = new System.Drawing.Point(0, 41);
+            this.dataGridViewActivitiesPlan2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.dataGridViewActivitiesPlan2.MultiSelect = false;
             this.dataGridViewActivitiesPlan2.Name = "dataGridViewActivitiesPlan2";
             this.dataGridViewActivitiesPlan2.ReadOnly = true;
@@ -670,17 +676,16 @@
             this.dataGridViewActivitiesPlan2.RowHeadersVisible = false;
             this.dataGridViewActivitiesPlan2.RowTemplate.Height = 24;
             this.dataGridViewActivitiesPlan2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewActivitiesPlan2.Size = new System.Drawing.Size(1593, 65);
+            this.dataGridViewActivitiesPlan2.Size = new System.Drawing.Size(1193, 75);
             this.dataGridViewActivitiesPlan2.TabIndex = 14;
             this.dataGridViewActivitiesPlan2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActivitiesPlan2_CellDoubleClick);
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.splitContainer4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1617, 725);
+            this.tabPage5.Size = new System.Drawing.Size(1211, 581);
             this.tabPage5.TabIndex = 10;
             this.tabPage5.Text = "Форма 4-э";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -689,7 +694,6 @@
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -705,17 +709,15 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer4.Size = new System.Drawing.Size(1617, 725);
-            this.splitContainer4.SplitterDistance = 49;
-            this.splitContainer4.SplitterWidth = 5;
+            this.splitContainer4.Size = new System.Drawing.Size(1211, 581);
+            this.splitContainer4.SplitterDistance = 39;
             this.splitContainer4.TabIndex = 0;
             // 
             // printButton
             // 
-            this.printButton.Location = new System.Drawing.Point(900, 11);
-            this.printButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printButton.Location = new System.Drawing.Point(675, 9);
             this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(100, 28);
+            this.printButton.Size = new System.Drawing.Size(75, 23);
             this.printButton.TabIndex = 24;
             this.printButton.Text = "Печать";
             this.printButton.UseVisualStyleBackColor = true;
@@ -724,10 +726,9 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(747, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(560, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 28);
+            this.button1.Size = new System.Drawing.Size(108, 23);
             this.button1.TabIndex = 23;
             this.button1.Text = "Подать отчет";
             this.button1.UseVisualStyleBackColor = true;
@@ -736,10 +737,9 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(623, 15);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Location = new System.Drawing.Point(467, 12);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(96, 21);
+            this.radioButton2.Size = new System.Drawing.Size(78, 17);
             this.radioButton2.TabIndex = 22;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Сумма ПО";
@@ -750,10 +750,9 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(472, 15);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Location = new System.Drawing.Point(354, 12);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(103, 21);
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
             this.radioButton1.TabIndex = 21;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Сумма РУП";
@@ -764,9 +763,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 20);
+            this.label2.Location = new System.Drawing.Point(7, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 17);
+            this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Вид мероприятий:";
             // 
@@ -777,10 +777,10 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Мероприятия по энергосбережению",
             "Мероприятия по увеличению МВТ"});
-            this.comboBox2.Location = new System.Drawing.Point(147, 15);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Location = new System.Drawing.Point(110, 12);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(293, 24);
+            this.comboBox2.Size = new System.Drawing.Size(221, 21);
             this.comboBox2.TabIndex = 16;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.DropDownList13_SelectedIndexChanged);
             // 
@@ -799,10 +799,9 @@
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1617, 671);
+            this.tabControl2.Size = new System.Drawing.Size(1211, 538);
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 0;
             this.tabControl2.TabIndexChanged += new System.EventHandler(this.tabControl2_TabIndexChanged);
@@ -818,10 +817,9 @@
             this.View1.Controls.Add(this.dataGridView1);
             this.View1.Controls.Add(this.label4);
             this.View1.Location = new System.Drawing.Point(4, 5);
-            this.View1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View1.Name = "View1";
-            this.View1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View1.Size = new System.Drawing.Size(1609, 662);
+            this.View1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View1.Size = new System.Drawing.Size(1203, 529);
             this.View1.TabIndex = 0;
             this.View1.Text = "View1";
             this.View1.UseVisualStyleBackColor = true;
@@ -829,10 +827,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(629, 751);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(472, 610);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(376, 17);
+            this.label9.Size = new System.Drawing.Size(291, 13);
             this.label9.TabIndex = 6;
             this.label9.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
@@ -840,36 +837,33 @@
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 770);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Location = new System.Drawing.Point(6, 626);
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridView3.Size = new System.Drawing.Size(1517, 330);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView3.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView3.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(629, 385);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(472, 313);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(231, 17);
+            this.label8.Size = new System.Drawing.Size(177, 13);
             this.label8.TabIndex = 4;
             this.label8.Text = "2. Дополнительные мероприятия";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(629, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(472, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 17);
+            this.label3.Size = new System.Drawing.Size(211, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "1.По плану мероприятий отчетного года";
             // 
@@ -877,43 +871,40 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 405);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 329);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView2.Size = new System.Drawing.Size(1517, 330);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView2.TabIndex = 2;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 39);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 32);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridView1.Size = new System.Drawing.Size(1517, 330);
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView1.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(668, 4);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(501, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 17);
+            this.label4.Size = new System.Drawing.Size(145, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "РАЗДЕЛ I (подразделение)";
             // 
@@ -928,10 +919,9 @@
             this.View2.Controls.Add(this.dataGridView4);
             this.View2.Controls.Add(this.label13);
             this.View2.Location = new System.Drawing.Point(4, 5);
-            this.View2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View2.Name = "View2";
-            this.View2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View2.Size = new System.Drawing.Size(1607, 652);
+            this.View2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View2.Size = new System.Drawing.Size(1205, 536);
             this.View2.TabIndex = 1;
             this.View2.Text = "View2";
             this.View2.UseVisualStyleBackColor = true;
@@ -939,10 +929,9 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(580, 752);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(435, 611);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(376, 17);
+            this.label10.Size = new System.Drawing.Size(291, 13);
             this.label10.TabIndex = 13;
             this.label10.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
@@ -950,33 +939,30 @@
             // 
             this.dataGridView6.AllowUserToAddRows = false;
             this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(8, 772);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView6.Location = new System.Drawing.Point(6, 627);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView6.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView6.TabIndex = 12;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(629, 386);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(472, 314);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(231, 17);
+            this.label11.Size = new System.Drawing.Size(177, 13);
             this.label11.TabIndex = 11;
             this.label11.Text = "2. Дополнительные мероприятия";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(629, 21);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(472, 17);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(277, 17);
+            this.label12.Size = new System.Drawing.Size(211, 13);
             this.label12.TabIndex = 10;
             this.label12.Text = "1.По плану мероприятий отчетного года";
             // 
@@ -984,37 +970,34 @@
             // 
             this.dataGridView5.AllowUserToAddRows = false;
             this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(8, 406);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView5.Location = new System.Drawing.Point(6, 330);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView5.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView5.TabIndex = 9;
             // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(8, 41);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Location = new System.Drawing.Point(6, 33);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView4.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView4.TabIndex = 8;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(647, 5);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(485, 4);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(238, 17);
+            this.label13.Size = new System.Drawing.Size(187, 13);
             this.label13.TabIndex = 7;
             this.label13.Text = "РАЗДЕЛ I (с нарастающим итогом)";
             // 
@@ -1029,10 +1012,9 @@
             this.View3.Controls.Add(this.dataGridView7);
             this.View3.Controls.Add(this.label17);
             this.View3.Location = new System.Drawing.Point(4, 5);
-            this.View3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View3.Name = "View3";
-            this.View3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View3.Size = new System.Drawing.Size(1607, 652);
+            this.View3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View3.Size = new System.Drawing.Size(1205, 536);
             this.View3.TabIndex = 2;
             this.View3.Text = "View3";
             this.View3.UseVisualStyleBackColor = true;
@@ -1040,10 +1022,9 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(629, 752);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(472, 611);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(376, 17);
+            this.label14.Size = new System.Drawing.Size(291, 13);
             this.label14.TabIndex = 20;
             this.label14.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
@@ -1051,37 +1032,34 @@
             // 
             this.dataGridView9.AllowUserToAddRows = false;
             this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView9.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(8, 772);
-            this.dataGridView9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView9.Location = new System.Drawing.Point(6, 627);
             this.dataGridView9.Name = "dataGridView9";
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView9.RowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridView9.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView9.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView9.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView9.TabIndex = 19;
             this.dataGridView9.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(629, 386);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(472, 314);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(231, 17);
+            this.label15.Size = new System.Drawing.Size(177, 13);
             this.label15.TabIndex = 18;
             this.label15.Text = "2. Дополнительные мероприятия";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(629, 21);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(472, 17);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(277, 17);
+            this.label16.Size = new System.Drawing.Size(211, 13);
             this.label16.TabIndex = 17;
             this.label16.Text = "1.По плану мероприятий отчетного года";
             // 
@@ -1089,17 +1067,16 @@
             // 
             this.dataGridView8.AllowUserToAddRows = false;
             this.dataGridView8.AllowUserToDeleteRows = false;
-            this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView8.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(8, 406);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView8.Location = new System.Drawing.Point(6, 330);
             this.dataGridView8.Name = "dataGridView8";
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView8.RowsDefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGridView8.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView8.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView8.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView8.TabIndex = 16;
             this.dataGridView8.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
@@ -1107,27 +1084,25 @@
             // 
             this.dataGridView7.AllowUserToAddRows = false;
             this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView7.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(8, 41);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView7.Location = new System.Drawing.Point(6, 33);
             this.dataGridView7.Name = "dataGridView7";
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView7.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.dataGridView7.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView7.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView7.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView7.TabIndex = 15;
             this.dataGridView7.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellEndEdit);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(668, 4);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(501, 3);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(192, 17);
+            this.label17.Size = new System.Drawing.Size(148, 13);
             this.label17.TabIndex = 14;
             this.label17.Text = "РАЗДЕЛ II (подразделение)";
             // 
@@ -1142,10 +1117,9 @@
             this.View4.Controls.Add(this.dataGridView10);
             this.View4.Controls.Add(this.label21);
             this.View4.Location = new System.Drawing.Point(4, 5);
-            this.View4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View4.Name = "View4";
-            this.View4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View4.Size = new System.Drawing.Size(1607, 652);
+            this.View4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View4.Size = new System.Drawing.Size(1205, 536);
             this.View4.TabIndex = 3;
             this.View4.Text = "View4";
             this.View4.UseVisualStyleBackColor = true;
@@ -1153,76 +1127,69 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(629, 752);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(472, 611);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(376, 17);
+            this.label18.Size = new System.Drawing.Size(291, 13);
             this.label18.TabIndex = 27;
             this.label18.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
             // dataGridView12
             // 
-            this.dataGridView12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView12.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView12.Location = new System.Drawing.Point(8, 772);
-            this.dataGridView12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView12.Location = new System.Drawing.Point(6, 627);
             this.dataGridView12.Name = "dataGridView12";
-            this.dataGridView12.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView12.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView12.TabIndex = 26;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(629, 386);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(472, 314);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(231, 17);
+            this.label19.Size = new System.Drawing.Size(177, 13);
             this.label19.TabIndex = 25;
             this.label19.Text = "2. Дополнительные мероприятия";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(629, 21);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(472, 17);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(277, 17);
+            this.label20.Size = new System.Drawing.Size(211, 13);
             this.label20.TabIndex = 24;
             this.label20.Text = "1.По плану мероприятий отчетного года";
             // 
             // dataGridView11
             // 
-            this.dataGridView11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView11.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView11.Location = new System.Drawing.Point(8, 406);
-            this.dataGridView11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView11.Location = new System.Drawing.Point(6, 330);
             this.dataGridView11.Name = "dataGridView11";
-            this.dataGridView11.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView11.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView11.TabIndex = 23;
             // 
             // dataGridView10
             // 
-            this.dataGridView10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(8, 41);
-            this.dataGridView10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView10.Location = new System.Drawing.Point(6, 33);
             this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(1515, 330);
+            this.dataGridView10.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView10.TabIndex = 22;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(649, 5);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(487, 4);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(241, 17);
+            this.label21.Size = new System.Drawing.Size(190, 13);
             this.label21.TabIndex = 21;
             this.label21.Text = "РАЗДЕЛ II (с нарастающим итогом)";
             // 
@@ -1237,10 +1204,9 @@
             this.View5.Controls.Add(this.dataGridView23);
             this.View5.Controls.Add(this.label29);
             this.View5.Location = new System.Drawing.Point(4, 5);
-            this.View5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View5.Name = "View5";
-            this.View5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View5.Size = new System.Drawing.Size(1607, 652);
+            this.View5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View5.Size = new System.Drawing.Size(1205, 536);
             this.View5.TabIndex = 4;
             this.View5.Text = "View5";
             this.View5.UseVisualStyleBackColor = true;
@@ -1248,10 +1214,9 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(412, 751);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Location = new System.Drawing.Point(309, 610);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(718, 17);
+            this.label26.Size = new System.Drawing.Size(554, 13);
             this.label26.TabIndex = 34;
             this.label26.Text = "!!!Таблица 2. Анализ причин невыполнения мероприятий программы по энергосбережени" +
     "ю отчетного года";
@@ -1260,36 +1225,33 @@
             // 
             this.dataGridView13.AllowUserToAddRows = false;
             this.dataGridView13.AllowUserToDeleteRows = false;
-            this.dataGridView13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView13.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView13.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView13.Location = new System.Drawing.Point(8, 770);
-            this.dataGridView13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView13.Location = new System.Drawing.Point(6, 626);
             this.dataGridView13.Name = "dataGridView13";
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView13.RowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.dataGridView13.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView13.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView13.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView13.TabIndex = 33;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(463, 386);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Location = new System.Drawing.Point(347, 314);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(594, 17);
+            this.label27.Size = new System.Drawing.Size(455, 13);
             this.label27.TabIndex = 32;
             this.label27.Text = "Таблица 1.  Показатели выполнения Плана мероприятий по энергосбережению (новая)";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(463, 21);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Location = new System.Drawing.Point(347, 17);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(601, 17);
+            this.label28.Size = new System.Drawing.Size(460, 13);
             this.label28.TabIndex = 31;
             this.label28.Text = "Таблица 1.  Показатели выполнения Плана мероприятий по энергосбережению (старая)";
             // 
@@ -1297,43 +1259,40 @@
             // 
             this.dataGridView14.AllowUserToAddRows = false;
             this.dataGridView14.AllowUserToDeleteRows = false;
-            this.dataGridView14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView14.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView14.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView14.Location = new System.Drawing.Point(8, 406);
-            this.dataGridView14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView14.Location = new System.Drawing.Point(6, 330);
             this.dataGridView14.Name = "dataGridView14";
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView14.RowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.dataGridView14.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView14.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView14.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView14.TabIndex = 30;
             // 
             // dataGridView23
             // 
             this.dataGridView23.AllowUserToAddRows = false;
             this.dataGridView23.AllowUserToDeleteRows = false;
-            this.dataGridView23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView23.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView23.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView23.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView23.Location = new System.Drawing.Point(8, 41);
-            this.dataGridView23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView23.Location = new System.Drawing.Point(6, 33);
             this.dataGridView23.Name = "dataGridView23";
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView23.RowsDefaultCellStyle = dataGridViewCellStyle27;
-            this.dataGridView23.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView23.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView23.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView23.TabIndex = 29;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(649, 5);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Location = new System.Drawing.Point(487, 4);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(195, 17);
+            this.label29.Size = new System.Drawing.Size(151, 13);
             this.label29.TabIndex = 28;
             this.label29.Text = "РАЗДЕЛ III (подразделение)";
             // 
@@ -1348,10 +1307,9 @@
             this.View6.Controls.Add(this.dataGridView15);
             this.View6.Controls.Add(this.label33);
             this.View6.Location = new System.Drawing.Point(4, 5);
-            this.View6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View6.Name = "View6";
-            this.View6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View6.Size = new System.Drawing.Size(1607, 652);
+            this.View6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View6.Size = new System.Drawing.Size(1205, 536);
             this.View6.TabIndex = 5;
             this.View6.Text = "View6";
             this.View6.UseVisualStyleBackColor = true;
@@ -1359,10 +1317,9 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(631, 751);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Location = new System.Drawing.Point(473, 610);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(376, 17);
+            this.label30.Size = new System.Drawing.Size(291, 13);
             this.label30.TabIndex = 13;
             this.label30.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
@@ -1370,36 +1327,33 @@
             // 
             this.dataGridView17.AllowUserToAddRows = false;
             this.dataGridView17.AllowUserToDeleteRows = false;
-            this.dataGridView17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView17.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView17.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView17.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView17.Location = new System.Drawing.Point(9, 770);
-            this.dataGridView17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView17.Location = new System.Drawing.Point(7, 626);
             this.dataGridView17.Name = "dataGridView17";
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView17.RowsDefaultCellStyle = dataGridViewCellStyle28;
-            this.dataGridView17.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView17.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView17.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView17.TabIndex = 12;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(631, 385);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Location = new System.Drawing.Point(473, 313);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(231, 17);
+            this.label31.Size = new System.Drawing.Size(177, 13);
             this.label31.TabIndex = 11;
             this.label31.Text = "2. Дополнительные мероприятия";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(631, 20);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Location = new System.Drawing.Point(473, 16);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(277, 17);
+            this.label32.Size = new System.Drawing.Size(211, 13);
             this.label32.TabIndex = 10;
             this.label32.Text = "1.По плану мероприятий отчетного года";
             // 
@@ -1407,43 +1361,40 @@
             // 
             this.dataGridView16.AllowUserToAddRows = false;
             this.dataGridView16.AllowUserToDeleteRows = false;
-            this.dataGridView16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView16.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView16.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView16.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView16.Location = new System.Drawing.Point(9, 405);
-            this.dataGridView16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView16.Location = new System.Drawing.Point(7, 329);
             this.dataGridView16.Name = "dataGridView16";
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView16.RowsDefaultCellStyle = dataGridViewCellStyle29;
-            this.dataGridView16.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView16.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView16.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView16.TabIndex = 9;
             // 
             // dataGridView15
             // 
             this.dataGridView15.AllowUserToAddRows = false;
             this.dataGridView15.AllowUserToDeleteRows = false;
-            this.dataGridView15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView15.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView15.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView15.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView15.Location = new System.Drawing.Point(9, 39);
-            this.dataGridView15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView15.Location = new System.Drawing.Point(7, 32);
             this.dataGridView15.Name = "dataGridView15";
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView15.RowsDefaultCellStyle = dataGridViewCellStyle30;
-            this.dataGridView15.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView15.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView15.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView15.TabIndex = 8;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(723, 4);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Location = new System.Drawing.Point(542, 3);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(72, 17);
+            this.label33.Size = new System.Drawing.Size(58, 13);
             this.label33.TabIndex = 7;
             this.label33.Text = "РАЗДЕЛ I";
             // 
@@ -1458,10 +1409,9 @@
             this.View7.Controls.Add(this.dataGridView18);
             this.View7.Controls.Add(this.label37);
             this.View7.Location = new System.Drawing.Point(4, 5);
-            this.View7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View7.Name = "View7";
-            this.View7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View7.Size = new System.Drawing.Size(1607, 652);
+            this.View7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View7.Size = new System.Drawing.Size(1205, 536);
             this.View7.TabIndex = 6;
             this.View7.Text = "View7";
             this.View7.UseVisualStyleBackColor = true;
@@ -1469,10 +1419,9 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(631, 751);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Location = new System.Drawing.Point(473, 610);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(376, 17);
+            this.label34.Size = new System.Drawing.Size(291, 13);
             this.label34.TabIndex = 27;
             this.label34.Text = "3. По мероприятиям предшествующего года внедрения";
             // 
@@ -1480,36 +1429,33 @@
             // 
             this.dataGridView20.AllowUserToAddRows = false;
             this.dataGridView20.AllowUserToDeleteRows = false;
-            this.dataGridView20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView20.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView20.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView20.Location = new System.Drawing.Point(9, 770);
-            this.dataGridView20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView20.Location = new System.Drawing.Point(7, 626);
             this.dataGridView20.Name = "dataGridView20";
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView20.RowsDefaultCellStyle = dataGridViewCellStyle31;
-            this.dataGridView20.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView20.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridView20.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView20.TabIndex = 26;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(631, 385);
-            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Location = new System.Drawing.Point(473, 313);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(231, 17);
+            this.label35.Size = new System.Drawing.Size(177, 13);
             this.label35.TabIndex = 25;
             this.label35.Text = "2. Дополнительные мероприятия";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(631, 20);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Location = new System.Drawing.Point(473, 16);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(277, 17);
+            this.label36.Size = new System.Drawing.Size(211, 13);
             this.label36.TabIndex = 24;
             this.label36.Text = "1.По плану мероприятий отчетного года";
             // 
@@ -1517,43 +1463,40 @@
             // 
             this.dataGridView19.AllowUserToAddRows = false;
             this.dataGridView19.AllowUserToDeleteRows = false;
-            this.dataGridView19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView19.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView19.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView19.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView19.Location = new System.Drawing.Point(9, 405);
-            this.dataGridView19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView19.Location = new System.Drawing.Point(7, 329);
             this.dataGridView19.Name = "dataGridView19";
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView19.RowsDefaultCellStyle = dataGridViewCellStyle32;
-            this.dataGridView19.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView19.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridView19.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView19.TabIndex = 23;
             // 
             // dataGridView18
             // 
             this.dataGridView18.AllowUserToAddRows = false;
             this.dataGridView18.AllowUserToDeleteRows = false;
-            this.dataGridView18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView18.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView18.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView18.Location = new System.Drawing.Point(9, 39);
-            this.dataGridView18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView18.Location = new System.Drawing.Point(7, 32);
             this.dataGridView18.Name = "dataGridView18";
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView18.RowsDefaultCellStyle = dataGridViewCellStyle33;
-            this.dataGridView18.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView18.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridView18.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView18.TabIndex = 22;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(731, 4);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Location = new System.Drawing.Point(548, 3);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(75, 17);
+            this.label37.Size = new System.Drawing.Size(61, 13);
             this.label37.TabIndex = 21;
             this.label37.Text = "РАЗДЕЛ II";
             // 
@@ -1568,10 +1511,9 @@
             this.View8.Controls.Add(this.dataGridView24);
             this.View8.Controls.Add(this.label41);
             this.View8.Location = new System.Drawing.Point(4, 5);
-            this.View8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View8.Name = "View8";
-            this.View8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.View8.Size = new System.Drawing.Size(1607, 652);
+            this.View8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.View8.Size = new System.Drawing.Size(1205, 536);
             this.View8.TabIndex = 7;
             this.View8.Text = "View8";
             this.View8.UseVisualStyleBackColor = true;
@@ -1579,10 +1521,9 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(413, 751);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Location = new System.Drawing.Point(310, 610);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(718, 17);
+            this.label38.Size = new System.Drawing.Size(554, 13);
             this.label38.TabIndex = 41;
             this.label38.Text = "!!!Таблица 2. Анализ причин невыполнения мероприятий программы по энергосбережени" +
     "ю отчетного года";
@@ -1591,36 +1532,33 @@
             // 
             this.dataGridView22.AllowUserToAddRows = false;
             this.dataGridView22.AllowUserToDeleteRows = false;
-            this.dataGridView22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView22.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView22.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView22.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView22.Location = new System.Drawing.Point(9, 770);
-            this.dataGridView22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView22.Location = new System.Drawing.Point(7, 626);
             this.dataGridView22.Name = "dataGridView22";
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView22.RowsDefaultCellStyle = dataGridViewCellStyle34;
-            this.dataGridView22.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView22.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView22.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView22.TabIndex = 40;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(464, 386);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Location = new System.Drawing.Point(348, 314);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(594, 17);
+            this.label39.Size = new System.Drawing.Size(455, 13);
             this.label39.TabIndex = 39;
             this.label39.Text = "Таблица 1.  Показатели выполнения Плана мероприятий по энергосбережению (новая)";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(464, 21);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Location = new System.Drawing.Point(348, 17);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(601, 17);
+            this.label40.Size = new System.Drawing.Size(460, 13);
             this.label40.TabIndex = 38;
             this.label40.Text = "Таблица 1.  Показатели выполнения Плана мероприятий по энергосбережению (старая)";
             // 
@@ -1628,43 +1566,40 @@
             // 
             this.dataGridView21.AllowUserToAddRows = false;
             this.dataGridView21.AllowUserToDeleteRows = false;
-            this.dataGridView21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView21.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView21.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView21.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView21.Location = new System.Drawing.Point(9, 406);
-            this.dataGridView21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView21.Location = new System.Drawing.Point(7, 330);
             this.dataGridView21.Name = "dataGridView21";
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView21.RowsDefaultCellStyle = dataGridViewCellStyle35;
-            this.dataGridView21.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView21.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView21.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView21.TabIndex = 37;
             // 
             // dataGridView24
             // 
             this.dataGridView24.AllowUserToAddRows = false;
             this.dataGridView24.AllowUserToDeleteRows = false;
-            this.dataGridView24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView24.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView24.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView24.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView24.Location = new System.Drawing.Point(9, 41);
-            this.dataGridView24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView24.Location = new System.Drawing.Point(7, 33);
             this.dataGridView24.Name = "dataGridView24";
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView24.RowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.dataGridView24.Size = new System.Drawing.Size(1515, 330);
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView24.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridView24.Size = new System.Drawing.Size(1173, 268);
             this.dataGridView24.TabIndex = 36;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(727, 4);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Location = new System.Drawing.Point(545, 3);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(78, 17);
+            this.label41.Size = new System.Drawing.Size(64, 13);
             this.label41.TabIndex = 35;
             this.label41.Text = "РАЗДЕЛ III";
             // 
@@ -1673,9 +1608,8 @@
             this.View9.Controls.Add(this.reoGridReport2);
             this.View9.Controls.Add(this.reoGridReport);
             this.View9.Location = new System.Drawing.Point(4, 5);
-            this.View9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View9.Name = "View9";
-            this.View9.Size = new System.Drawing.Size(1607, 652);
+            this.View9.Size = new System.Drawing.Size(1205, 536);
             this.View9.TabIndex = 8;
             this.View9.Text = "View9";
             this.View9.UseVisualStyleBackColor = true;
@@ -1685,17 +1619,17 @@
             this.reoGridReport2.BackColor = System.Drawing.Color.White;
             this.reoGridReport2.ColumnHeaderContextMenuStrip = null;
             this.reoGridReport2.LeadHeaderContextMenuStrip = null;
-            this.reoGridReport2.Location = new System.Drawing.Point(0, 223);
-            this.reoGridReport2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reoGridReport2.Location = new System.Drawing.Point(0, 181);
+            this.reoGridReport2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reoGridReport2.Name = "reoGridReport2";
             this.reoGridReport2.RowHeaderContextMenuStrip = null;
             this.reoGridReport2.Script = null;
             this.reoGridReport2.SheetTabContextMenuStrip = null;
             this.reoGridReport2.SheetTabNewButtonVisible = true;
             this.reoGridReport2.SheetTabVisible = true;
-            this.reoGridReport2.SheetTabWidth = 80;
+            this.reoGridReport2.SheetTabWidth = 60;
             this.reoGridReport2.ShowScrollEndSpacing = true;
-            this.reoGridReport2.Size = new System.Drawing.Size(1601, 218);
+            this.reoGridReport2.Size = new System.Drawing.Size(1201, 177);
             this.reoGridReport2.TabIndex = 3;
             this.reoGridReport2.Text = "reoGridControl1";
             // 
@@ -1705,27 +1639,27 @@
             this.reoGridReport.ColumnHeaderContextMenuStrip = null;
             this.reoGridReport.LeadHeaderContextMenuStrip = null;
             this.reoGridReport.Location = new System.Drawing.Point(0, 0);
-            this.reoGridReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reoGridReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reoGridReport.Name = "reoGridReport";
             this.reoGridReport.RowHeaderContextMenuStrip = null;
             this.reoGridReport.Script = null;
             this.reoGridReport.SheetTabContextMenuStrip = null;
             this.reoGridReport.SheetTabNewButtonVisible = true;
             this.reoGridReport.SheetTabVisible = true;
-            this.reoGridReport.SheetTabWidth = 80;
+            this.reoGridReport.SheetTabWidth = 60;
             this.reoGridReport.ShowScrollEndSpacing = true;
-            this.reoGridReport.Size = new System.Drawing.Size(1601, 218);
+            this.reoGridReport.Size = new System.Drawing.Size(1201, 177);
             this.reoGridReport.TabIndex = 2;
             this.reoGridReport.Text = "reoGridReport";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1625, 788);
+            this.ClientSize = new System.Drawing.Size(1219, 640);
             this.Controls.Add(this.splitContainerMain);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система \"Энерго-Инфо\", версия 1.0.";
