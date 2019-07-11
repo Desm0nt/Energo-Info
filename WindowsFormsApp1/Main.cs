@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             comboBoxEnterprises.DisplayMember = sourceEnterprises.Columns[1].ToString();
             comboBoxEnterprises.SelectedValue = _selectedOrgID;
         }
-
+         
         private void StartInit()
         {
             try
