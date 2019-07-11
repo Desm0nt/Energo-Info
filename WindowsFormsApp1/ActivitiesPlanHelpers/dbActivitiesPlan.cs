@@ -11,7 +11,6 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
         DataSet ds = new DataSet();
         SqlCommand MyCommand = new SqlCommand();
 
-
         public dbActivitiesPlan()
         {
             connection = new SqlConnection(strConnection);
@@ -142,6 +141,82 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
                 adapter.UpdateCommand = new SqlCommand(updateCommand, connection);
             if (deleteCommand != null)
                 adapter.DeleteCommand = new SqlCommand(deleteCommand, connection);
+            return adapter;
+        }
+        public SqlDataAdapter CreateAdapterInfo(int razdel, int PdrId, string ColumnHeaderKey)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string selectCommand = null;
+
+            switch (razdel)
+            {
+                case 1:
+                    if (PdrId == 1)
+                    {
+                        if (ColumnHeaderKey == "I квартал. Экономический эффект, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv1Etutn AS 'I квартал. Экономический эффект, т у.т.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv1Etutn>0) AND (НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "I квартал. Экономический эффект, млн. руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv1Erubn AS 'I квартал. Экономический эффект, млн. руб' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv1Erubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "II квартал. Экономический эффект, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv2Etutn AS 'II квартал. Экономический эффект, т у.т.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv2Etutn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "II квартал. Экономический эффект, млн. руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv2Erubn AS 'II квартал. Экономический эффект, млн. руб' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv2Erubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "III квартал. Экономический эффект, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv3Etutn AS 'III квартал. Экономический эффект, т у.т.'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv3Etutn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "III квартал. Экономический эффект, млн. руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',  PlanMeropr.kv3Erubn AS 'III квартал. Экономический эффект, млн. руб'      FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv3Erubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "IV квартал. Экономический эффект, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv4Etutn AS 'IV квартал. Экономический эффект, т у.т.'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv4Etutn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "IV квартал. Экономический эффект, млн. руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv4Erubn AS 'IV квартал. Экономический эффект, млн. руб'       FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.kv4Erubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Экономический эффект за год, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.yearEtutn AS 'Экономический эффект за год, т у.т.'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.yearEtutn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Экономический эффект за год, млн. руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.yearErubn AS 'Экономический эффект за год, млн. руб'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.yearErubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Условно-годовая экономия ТЭР, т у.т.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.Etutn AS 'Условно-годовая экономия ТЭР, т у.т.'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.Etutn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Условно-годовая экономия ТЭР, млн.руб")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.Erubn AS 'Условно-годовая экономия ТЭР, млн.руб'        FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр  LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1) AND (PlanMeropr.Erubn>0) AND(НаимМероприятий.MBT = 0) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                    }
+                    //++GridView10.DataBind(); sqldatasource12!!!
+            
+                    break;
+                case 2:
+                    if ((PdrId == 1) || (PdrId == 43))
+                    {
+                        if (ColumnHeaderKey == "I квартал. Увеличение использования МВТ, ВЭР, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv1Etutn AS 'I квартал. Увеличение использования МВТ, ВЭР, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv1Etutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "I квартал. Снижение затрат на ТЭР, млн. руб.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv1Erubn AS 'I квартал. Снижение затрат на ТЭР, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv1Erubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "II квартал. Увеличение использования МВТ, ВЭР, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv2Etutn AS 'II квартал. Увеличение использования МВТ, ВЭР, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv2Etutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "II квартал. Снижение затрат на ТЭР, млн. руб.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия', PlanMeropr.kv2Erubn AS 'II квартал. Снижение затрат на ТЭР, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv2Erubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "III квартал. Увеличение использования МВТ, ВЭР, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv3Etutn AS 'III квартал. Увеличение использования МВТ, ВЭР, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv3Etutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "III квартал. Снижение затрат на ТЭР, млн. руб.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv3Erubn AS 'III квартал. Снижение затрат на ТЭР, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv3Erubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "IV квартал. Увеличение использования МВТ, ВЭР, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv4Etutn AS 'IV квартал. Увеличение использования МВТ, ВЭР, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv4Etutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "IV квартал. Снижение затрат на ТЭР, млн. руб.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.kv4Erubn AS 'IV квартал. Снижение затрат на ТЭР, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.kv4Erubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Увеличение использования МВТ, ВЭР за год, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.yearEtutn AS 'Увеличение использования МВТ, ВЭР за год, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.yearEtutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Снижение затрат на ТЭР за год, млн. руб.")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.yearErubn AS 'Снижение затрат на ТЭР за год, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.yearErubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "Увеличение использования МВТ, ВЭР, т у.т")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.Etutn AS 'Увеличение использования МВТ, ВЭР, т у.т' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.Etutn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        if (ColumnHeaderKey == "")
+                            selectCommand = "SELECT НаимМероприятий.НомерСтроки AS 'Номер строки', ОснНапр.КодОснНапрСтр AS 'Код', НаимМероприятий.Наименование AS 'Наименование мероприятия',PlanMeropr.Erubn AS 'Снижение затрат на ТЭР, млн. руб.' FROM PlanMeropr LEFT JOIN НаимМероприятий ON PlanMeropr.KodMer=НаимМероприятий.КодНаимМеропр LEFT OUTER JOIN ОснНапр ON ОснНапр.КодОснНапр = НаимМероприятий.КодОснНапр LEFT OUTER JOIN Предприятия ON Предприятия.КодПредпр = PlanMeropr.PdrId WHERE(PlanMeropr.CurYear = @curyear - 1)AND (PlanMeropr.Erubn>0) AND(НаимМероприятий.MBT = 1) AND NOT((day(PlanMeropr.date_vnedr) < 16 and month(PlanMeropr.date_vnedr)= 1)) AND(Предприятия.ЭСум = 1) AND((Предприятия.ПО = @PO) OR(Предприятия.РУП = @RUP))";
+                        //+GridView13.DataBind();
+                    }
+
+                    break;
+             
+
+            }
+            if (selectCommand != null)
+                adapter.SelectCommand = new SqlCommand(selectCommand, connection);
             return adapter;
         }
 
@@ -287,22 +362,46 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
             return dt;
         }
 
-        /*
-        public DataTable GetTable2(int adminId, int curyear, int razdel, int PdrId, int po, int rup)
+
+        public DataTable GetTableInfo(int curyear, int razdel, int PdrId, int po, int rup, string ColumnHeaderKey)
         {
+            DataTable dt=new DataTable();
             ds.Clear();
             connection.Open();
-            SqlDataAdapter adapter = CreateAdapter(2, razdel, adminId);
-            //adapter.SelectCommand.Parameters.AddWithValue("@curyear", curyear);
-            //adapter.SelectCommand.Parameters.AddWithValue("@PdrId", PdrId);
-            //adapter.SelectCommand.Parameters.AddWithValue("@po", po);
-            //adapter.SelectCommand.Parameters.AddWithValue("@rup", rup);
-            adapter.Fill(ds);
-            DataTable dt = ds.Tables[0];
+            SqlDataAdapter adapter = CreateAdapterInfo(razdel, PdrId, ColumnHeaderKey);
+            if (adapter.SelectCommand != null)
+            {
+                switch (razdel)
+                {
+                    case 1:
+                        if (PdrId == 1)
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@curyear", curyear);
+                            adapter.SelectCommand.Parameters.AddWithValue("@po", po);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rup", rup);
+                            //+GridView10.DataBind();
+                        }
+                        break;
+                    case 2:
+                        if ((PdrId == 1) || (PdrId == 43))
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@curyear", curyear);
+                            adapter.SelectCommand.Parameters.AddWithValue("@po", po);
+                            adapter.SelectCommand.Parameters.AddWithValue("@rup", rup);
+                            //+GridView13.DataBind();
+                        }
+                        break;
+                }
+                adapter.Fill(ds);
+                dt = ds.Tables[0];
+                dt.Rows.Add(dt.NewRow());
+            }
+            else
+                dt = null;
             connection.Close();
             return dt;
         }
-        */
+      
         
     }
 

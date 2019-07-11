@@ -393,26 +393,15 @@ namespace WindowsFormsApp1
         {
             if (UserRole == 1 && e.RowIndex == 0)
             {
-                if(SectionСomboBoxActivitiesPlan.SelectedIndex==0)
-                    new FormInfoForAdmin().Show();
-                if (SectionСomboBoxActivitiesPlan.SelectedIndex == 1)
-                    new FormInfoForAdmin().Show();
-                //int Section = SectionСomboBoxActivitiesPlan.SelectedIndex + 1;
-                //int SubSection;
-                //if (SubsectionComboBoxEditActivitiesPlan.SelectedIndex == 1)
-                //    SubSection = 3;
-                //else SubSection = 1;
-                //if (SubsectionComboBoxEditActivitiesPlan.SelectedIndex != 1)
-                //{
-                //    int id = Convert.ToInt32(dataGridViewEditActivitiesPlan.Rows[e.RowIndex].Cells["ID"].Value);
+                if(SectionСomboBoxActivitiesPlan.SelectedIndex==0 || SectionСomboBoxActivitiesPlan.SelectedIndex == 1)
+                {
+                    var idOrg = Convert.ToInt32(comboBoxEnterprises.SelectedValue);
 
+                    var source = new dbActivitiesPlan().GetTableInfo(_year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0, dataGridViewActivitiesPlan2.Columns[e.ColumnIndex].HeaderText.ToString());
 
-                //    new EditActivitiesPlan((SectionСomboBoxEditActivitiesPlan.SelectedIndex == 1) ? true : false, _year, Convert.ToInt32(comboBoxEnterprises.SelectedValue), Section, SubSection, dataGridViewEditActivitiesPlan.Rows[e.RowIndex]).Show();
-                //}
-                //else
-                //{
-                //    new SetupActivitiesGroup(dataGridViewEditActivitiesPlan.Rows[e.RowIndex], _year, SectionСomboBoxEditActivitiesPlan.SelectedIndex + 1).Show();
-                //}
+                    if (source!=null && source.Rows.Count>1)
+                        new FormInfoForAdmin(source, dataGridViewActivitiesPlan2.Columns[e.ColumnIndex].HeaderText.ToString()).Show();
+                }
             }
         }
 
@@ -513,9 +502,6 @@ namespace WindowsFormsApp1
 
                 var source1 = new dbActivitiesPlan().GetTable(1, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
                 var source2 = new dbActivitiesPlan().GetTable(2, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
-
-                //var source1 = new dbActivitiesPlan().GetTable(1, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
-                //var source2 = new dbActivitiesPlan().GetTable(2, _year, SectionСomboBoxActivitiesPlan.SelectedIndex + 1, idOrg, radioButtonPO.Checked ? 1 : 0, radioButtonRUP.Checked ? 1 : 0);
                 new SaveReport(SectionСomboBoxActivitiesPlan.SelectedIndex + 1, _year, comboBoxEnterprises.Text, source1, source2);
             }
         }

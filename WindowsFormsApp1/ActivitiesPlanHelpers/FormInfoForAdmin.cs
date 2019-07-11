@@ -12,9 +12,11 @@ namespace WindowsFormsApp1.ActivitiesPlanHelpers
 {
     public partial class FormInfoForAdmin : Form
     {
-        public FormInfoForAdmin()
+        public FormInfoForAdmin(DataTable dt,string s)
         {
             InitializeComponent();
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[s].DefaultCellStyle.Format = "f1";
         }
     }
 }
