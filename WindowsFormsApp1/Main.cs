@@ -1894,7 +1894,8 @@ namespace WindowsFormsApp1
                 dataGridView.Columns["PdrId"].DisplayIndex = 26;
 
             }
-        }
+        } 
+    
         void DataGridRoColor(DataGridView dataGridView)
         {
             for (int i = 0; i < dataGridView.ColumnCount; i++)
@@ -2144,18 +2145,21 @@ namespace WindowsFormsApp1
             }
             if (type == 3)
             {
-                int i = dataGridView.Rows.Count - 1;
-                //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
-                worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
-                worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
-                worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
-                worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
-                worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
-                worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
-                worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                if (dataGridView.Rows.Count >= 1)
+                {
+                    int i = dataGridView.Rows.Count - 1;
+                    //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                    worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                    worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                    worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                    worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                    worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                    worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                    worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                    worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                    worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                    worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                }
                 startrow+=2;
             }
             if (type == 4)
@@ -2180,23 +2184,26 @@ namespace WindowsFormsApp1
                 dataGridView.Columns["ZtrOrg"].DisplayIndex = 17;
                 dataGridView.Columns["ZtrKr"].DisplayIndex = 18;
                 dataGridView.Columns["ZtrOther"].DisplayIndex = 19;
-                int i = dataGridView.Rows.Count - 1;
-                //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
-                worksheet["E" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрДо"].Value.ToString();
-                worksheet["F" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрПосле"].Value.ToString();
-                worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VTpl"].Value.ToString());
-                worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VRub"].Value.ToString());
-                worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
-                worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
-                worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["fact"].Value.ToString());
-                worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
-                worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
-                worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
-                worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
-                worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
-                worksheet["Q" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
-                worksheet["R" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
-                worksheet["S" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                if (dataGridView.Rows.Count >= 1)
+                {
+                    int i = dataGridView.Rows.Count - 1;
+                    //worksheet["C" + (startrow + 1)] = dataGridView.Rows[i].Cells["Наименование"].Value.ToString();
+                    worksheet["E" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрДо"].Value.ToString();
+                    worksheet["F" + (startrow + 1)] = dataGridView.Rows[i].Cells["КодТэрПосле"].Value.ToString();
+                    worksheet["G" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VTpl"].Value.ToString());
+                    worksheet["H" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["VRub"].Value.ToString());
+                    worksheet["I" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkUslTpl"].Value.ToString());
+                    worksheet["J" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["EkRub"].Value.ToString());
+                    worksheet["K" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["fact"].Value.ToString());
+                    worksheet["L" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrAll"].Value.ToString());
+                    worksheet["M" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIF"].Value.ToString());
+                    worksheet["N" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrIFdr"].Value.ToString());
+                    worksheet["O" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrRB"].Value.ToString());
+                    worksheet["P" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrMB"].Value.ToString());
+                    worksheet["Q" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOrg"].Value.ToString());
+                    worksheet["R" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrKr"].Value.ToString());
+                    worksheet["S" + (startrow + 1)] = float.Parse(dataGridView.Rows[i].Cells["ZtrOther"].Value.ToString());
+                }
                 startrow += 2;
             }
             return startrow;

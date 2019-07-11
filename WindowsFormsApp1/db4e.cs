@@ -319,7 +319,6 @@ namespace WindowsFormsApp1
             }
         }
 
-
         public static DataTable GetSqlDataSource2(int quater, int year, int id_org, int indexmer)
         {
             int TypeMer = 1;
