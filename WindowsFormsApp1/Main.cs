@@ -81,7 +81,7 @@ namespace WindowsFormsApp1
         }
 
         #region Activities Plan
-
+         
         private void InitActivitiesPlan()
         {
             YearLabelActivitiesPlan.Text = "Год: " + _year.ToString();
@@ -97,11 +97,13 @@ namespace WindowsFormsApp1
                 switch (SectionСomboBoxActivitiesPlan.SelectedIndex)
                 {
                     case 0:
+                        comboBoxEnterprises.Enabled = true;
                         labelTitleActivitiesPlan.Text = "Перечень мероприятий по энергосбережению";
                         labelHeader1.Text = "Мероприятия, реализуемые по отраслевой программе";
                         labelHeader2.Text = "!!!Мероприятия предшествующего года внедрения, до окончания срока действия";
                         break;
                     case 1:
+                        comboBoxEnterprises.Enabled = true;
                         labelTitleActivitiesPlan.Text = "Перечень мероприятий по увеличению использования МВТ, отходов производства, ВЭР, нетрадиционных и возобновляемых энергоресурсов (поквартальный по РУП и ПО)";
                         labelHeader1.Text = "Мероприятия предшествующего года внедрения, до окончания срока действия";
                         labelHeader2.Text = "";
@@ -354,9 +356,11 @@ namespace WindowsFormsApp1
             { InitEditActivitiesPlan(); }
             if (tabControl1.SelectedIndex == 1)
             { InitActivitiesPlan(); }
-            if (tabControl1.SelectedIndex == 1)
+            if (tabControl1.SelectedIndex == 2)
             {
                 DropDownList13_SelectedIndexChanged(this, EventArgs.Empty);
+                if (UserRole == 1)
+                    comboBoxEnterprises.Enabled = true;
             }
         }
 
